@@ -9,10 +9,11 @@ $(function() {
 			 head.addClass('fixed');
 		}else {
 			head.removeClass('fixed');
+
 		}
 	});
 
-		/*IE DETECTION OVERRIDE FOR FIXED HEADER*/	
+		/*IE DETECTION OVERRIDE FOR FIXED HEADER*/
 		if (navigator.userAgent.match(/msie|trident/i)) {
 
 			var override = $('.fixed-header');
@@ -23,7 +24,7 @@ $(function() {
 	/*SCROLL TO STOPS*/
 	$('.scroll-stop').on('click', function(event) {
 		event.preventDefault();
-		
+
 		var locationID = $(this).attr('data-scroll');
 
 		$('.' + locationID + '-wpr').animatescroll();
@@ -54,7 +55,7 @@ $(function() {
 
     		$buttonGroup.on( 'click', 'button', function() {
 				$buttonGroup.find('.is-checked').removeClass('is-checked');
-				
+
 				$( this ).addClass('is-checked');
 	    	});
 		});
@@ -62,7 +63,7 @@ $(function() {
 	// Overlay Hover
 	$('.portfolio-item').on('mouseenter', function(event) {
 		event.preventDefault();
-		
+
 		var overlay = $(this).find('.img-overlay');
 
 		overlay.css('display', 'block');
@@ -71,7 +72,7 @@ $(function() {
 
 	$('.portfolio-item').on('mouseleave', function(event) {
 		event.preventDefault();
-		
+
 		var overlay = $(this).find('.img-overlay');
 
 		overlay.css('display', 'none');

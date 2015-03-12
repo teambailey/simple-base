@@ -5,6 +5,17 @@
 @import "partials/variables.scss";
 
 // General Styles
-@import "partials/layout.scss";
+@import "partials/global.scss";
+@import "partials/sprites.scss";
+@import "partials/header.scss";
+@import "partials/fixed-header.scss";
+@import "partials/intro.scss";
+@import "partials/about.scss";
+@import "partials/works.scss";
+@import "partials/skills.scss";
+@import "partials/contact.scss";
+@import "partials/footer.scss";
+@import "partials/fixed-slide-right-menu.scss";
+@import "partials/overrides.scss";
 @import "partials/responsive.scss";
 
