@@ -1,0 +1,10 @@
+
+// Imports all Sass file to one so that it can be compiled onto one css file - css/style.css
+
+// Variables and Mixins
+@import "partials/variables.scss";
+
+// General Styles
+@import "partials/layout.scss";
+@import "partials/responsive.scss";
+
