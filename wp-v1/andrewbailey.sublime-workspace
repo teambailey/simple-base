@@ -1,0 +1,224 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "wp-content/themes/weblizar/style.css",
+			"settings":
+			{
+				"buffer_size": 141797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/weblizar/header.php",
+			"settings":
+			{
+				"buffer_size": 3124,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 167.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/teambailey/Documents/Web/andrewbailey.me/wp-content/themes/weblizar/header.php",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/style.css",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/header.php",
+		"/Users/teambailey/Documents/Web/mysite1/wp-config.php",
+		"/Users/teambailey/Documents/Web/andrewbailey.me/wp-admin/options-general.php",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/page-fullwidth.php",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/test1.scss",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/test1.css",
+		"/Users/teambailey/Documents/Web/mysite1/wp-content/themes/weblizar/test1.sass",
+		"/Users/teambailey/Documents/Web/mysite1/wp-admin/untitled",
+		"/Users/teambailey/Documents/Web/mysite1/wp-admin/admin-functions.php",
+		"/Users/teambailey/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/teambailey/Downloads/Ftp alb@andrewbailey.me.xml"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wp_nav_menu"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "wp-content/themes/weblizar/style.css",
+					"settings":
+					{
+						"buffer_size": 141797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "wp-content/themes/weblizar/header.php",
+					"settings":
+					{
+						"buffer_size": 3124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3051,
+								3051
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 481.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true
+}
