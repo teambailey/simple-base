@@ -5,11 +5,14 @@ nav {
     position: fixed;
     right:0;
     z-index: 9998;
-    margin-top: -95px;
+    margin-top: -450px;
+
+    // display: none;
 
     // temp
-    &:hover{
-        margin-top: 0;
+    &.slide-down{
+        margin-top: -96px;
+        // display: block;
     }
 
     .meun-slide {

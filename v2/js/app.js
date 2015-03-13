@@ -1,5 +1,11 @@
 $(function() {
 
+	$('.toggle-slide-down, .menu-close-btn').on('click', function(event) {
+		event.preventDefault();
+
+		$('.menu').toggleClass('slide-down');
+	});
+
 	/*FIXED HEADER*/
 	$(window).on('scroll.fixedHeader', function (){
 
@@ -38,6 +44,7 @@ $(function() {
 		var locationID = $(this).attr('data-scroll');
 
 		$('.' + locationID + '-wpr').scrollView();
+		$('.menu').removeClass('slide-down');
 	});
 
 	// ISOTOPE STUFF
