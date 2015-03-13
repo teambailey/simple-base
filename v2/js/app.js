@@ -21,13 +21,23 @@ $(function() {
 			$(override).addClass('ie-sux');
 		}
 
-	/*SCROLL TO STOPS*/
+	// Scroll Stop Stuff
+	// scroll to animation function
+	$.fn.scrollView = function () {
+	    return this.each(function () {
+	        $('html, body').animate({
+	            scrollTop: $(this).offset().top
+	        }, 600);
+	    });
+	};
+
+	// init scroll function
 	$('.scroll-stop').on('click', function(event) {
 		event.preventDefault();
 
 		var locationID = $(this).attr('data-scroll');
 
-		$('.' + locationID + '-wpr').animatescroll();
+		$('.' + locationID + '-wpr').scrollView();
 	});
 
 	// ISOTOPE STUFF

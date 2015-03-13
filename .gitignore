@@ -1,0 +1,4 @@
+.idea
+*.scssc
+#bower_components
+#node_modules
