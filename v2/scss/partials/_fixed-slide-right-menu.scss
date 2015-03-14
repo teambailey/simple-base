@@ -5,14 +5,10 @@ nav {
     position: fixed;
     right:0;
     z-index: 9998;
-    margin-top: -450px;
+    margin-top: -460px;
 
-    // display: none;
-
-    // temp
-    &.slide-down{
-        margin-top: -96px;
-        // display: block;
+    &.slide{
+        margin-top: -98px;
     }
 
     .meun-slide {
@@ -22,33 +18,53 @@ nav {
 
         li {
             background-color: $light-sky-blue;
-            border-bottom: 1px solid $grey;
+            border-bottom: 3px solid $grey;
 
-            &:first-of-type {
-                padding: 10px 0;
-            }
-
-            .menu-close-btn {
-                display: block;
-                padding:4px 28px;
-                margin: 0 auto;
-                background-color: transparent;
-                border: 1px solid #428bca;
-                color:#428bca;
-
-                &:hover {
-                    color:$grey;
-                    border: 1px solid $grey;
-                }
-            }
+            // &:first-of-type {
+            //     padding: 10px 0;
+            // }
 
             .meun-link {
                 display: block;
-                padding:20px 80px;
+                padding:30px 155px;
 
-                &:hover,
-                &:focus {
-                    text-decoration: none;
+                position: relative;
+                overflow: hidden;
+
+                .menu-links-text {
+                    position: absolute;
+                    bottom: -70px;
+                    left:0;
+                    font-size: 4.5em;
+
+                    transition: bottom 800ms ease-in-out;
+
+                    &.slide {
+                        bottom: -34px;
+                    }
+                }
+            }
+
+            .menu-close {
+                // display: block;
+                padding:25px 155px;
+                // margin: 0 auto;
+                // background-color: transparent;
+                // border: 1px solid #428bca;
+                // color:#428bca;
+
+                // &:hover {
+                //     color:$grey;
+                //     border: 1px solid $grey;
+                // }
+
+                .menu-close-text {
+                    bottom: -45px;
+                    font-size: 2.5em;
+
+                    &.slide {
+                        bottom:-12px;
+                    }
                 }
             }
         }
