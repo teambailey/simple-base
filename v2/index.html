@@ -5,15 +5,11 @@
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<title>Andew Bailey - Front End Developer</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/lightbox.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Lobster+Two|Molle:400italic|Bangers|Julius+Sans+One' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="http://www.andrewbailey.me/favicon.ico">
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-		<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
-		<script type="text/javascript" src="js/lightbox.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
@@ -107,67 +103,99 @@
 			</div>
 		</div>
 		<div class="conatiner section-wpr dblue works-wpr">
+			<div class="works-bg-mask"></div>
 			<div class="works">
 				<span class="works-title">WORKS</span>
 				<div class="works-content-wpr" style="">
-					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+					<i class="fa fa-close"></i>
+					<div class="works-img-wpr" id="alma-img">
+						<img class="works-img" src="imgs/alma-img2.jpg">
+						<span>Alma Ad Agency</span>
+					</div>
+					<div class="works-img-wpr" id="dci-img">
+						<img class="works-img" src="imgs/dci-img1a.jpg">
+						<span>DCI</span>
+					</div>
+					<div class="works-img-wpr" id="reprint-img">
+						<img class="works-img" src="imgs/reprint-img1a.jpg">
+						<span>Reprint Nexus</span>
+					</div>
+					<div class="works-img-wpr" id="bp-img">
+						<img class="works-img" src="imgs/bp-img1a.jpg">
+						<span>Blue Project</span>
+					</div>
+					<div class="works-img-wpr" id="oo-img">
+						<img class="works-img" src="imgs/oo-img1a.jpg">
+						<span>One & Only Resorts</span>
+					</div>
+					<div class="works-img-wpr" id="qa-img">
+						<img class="works-img" src="imgs/qa-img1a.jpg">
+						<span>Quaker Oats</span>
+					</div>
+					<div class="works-img-wpr" id="ampcms-img">
+						<img class="works-img" src="imgs/ampcms-img2a.jpg">
+						<span>AMP CMS</span>
+					</div>
+					<div class="works-img-wpr" id="promo-img" >
+						<img class="works-img" src="imgs/promo-img2a.jpg">
+						<span>Promotions Management</span>
+					</div>
+					<div class="works-img-wpr" id="atlantis-img" >
+						<img class="works-img" src="imgs/atlantis-img5a.jpg">
+						<span>Atlantis</span>
+					</div>
+					<div class="row" id="works-scrollTarget">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%" src="imgs/alma-img2.jpg">
+								<img style="width:100%" data-img="alma" src="imgs/alma-img2.jpg">
 								<span class="works-content-text">Alma</span>
 							</div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%; " src="imgs/dci-img1a.jpg">
-								<span class="works-content-text">Digital Connections</span>
+								<img style="width:100%;" data-img="dci" src="imgs/dci-img1a.jpg">
+								<span class="works-content-text">Digital Connections LLC</span>
 							</div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%" src="imgs/reprint-img1a.jpg">
+								<img style="width:100%" data-img="reprint" src="imgs/reprint-img1a.jpg">
 								<span class="works-content-text">Reprint Nexus</span>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%" src="imgs/bp-img1a.jpg">
+								<img style="width:100%" data-img="bp" src="imgs/bp-img1a.jpg">
 								<span class="works-content-text">Blue Project</span>
 							</div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%" src="imgs/oo-img1a.jpg">
+								<img style="width:100%" data-img="oo" src="imgs/oo-img1a.jpg">
 								<span class="works-content-text">One & Only Resorts</span>
 							</div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
+						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%" src="imgs/qa-img1a.jpg">
-								<span class="works-content-text">Quaker Oats - Spanish Site</span>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding:2px;">
-							<div class="works-content">
-								<img style="width:100%;" src="imgs/ampcms-img1a.jpg">
-								<span class="works-content-text">Triton Digital - AMP CMS</span>
+								<img style="width:100%" data-img="qa" src="imgs/qa-img1a.jpg">
+								<span class="works-content-text">Quaker Oats - Spanish</span>
 							</div>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding:2px;">
 							<div class="works-content">
-								<img style="width:100%;" src="imgs/promo-img1a.jpg">
+								<img style="width:100%;" data-img="ampcms" src="imgs/ampcms-img1a.jpg">
+								<span class="works-content-text">TritonDigital AMP CMS</span>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding:2px;">
+							<div class="works-content">
+								<img style="width:100%;" data-img="promo" src="imgs/promo-img1a.jpg">
 								<span class="works-content-text">Promotions Management</span>
 							</div>
 						</div>
-					</div>
-					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:2px;">
 							<div class="works-content" style="height:220px;">
-								<img style="width:100%;" src="imgs/atlantis-img2a.jpg">
+								<img style="width:100%;" data-img="atlantis" src="imgs/atlantis-img2a.jpg">
 								<span class="works-content-text">Atlantis Bahamas Resort</span>
 							</div>
 						</div>
@@ -175,125 +203,13 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="container section-wpr dblue works-wpr">
-			<div class="isotope-section">
-				<h2>Works</h2>
-				<div class="button-group" id="filters">
-					<button class="btn is-checked" data-filter="*">All</button>
-					<button class="btn" data-filter=".fed">Front End Development</button>
-					<button class="btn" data-filter=".ux">UX Design</button>
-					<button class="btn" data-filter=".qa">Quality Assurance</button>
-				</div>
-				<div class="isotope">
-					<div class="portfolio-item fed qa" data-category="web">
-						<a href="imgs/atlantis-img4.jpg" data-lightbox="image-1" data-title="Built main navgation header menu including responsive aspects.">
-							<div class="img-overlay">
-								<div>Atlantis Paradise Island, Bahamas</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/atlantis-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item fed ux qa" data-category="graphic">
-						<a href="imgs/reprint-img2.jpg" data-lightbox="image-2" data-title="*Due to the proprietary nature of this web application, only promotional screenshots of internal pages are available.">
-							<div class="img-overlay">
-								<div>Reprint Nexus</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/reprint-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item fed ux qa" data-category="artwork">
-						<a href="imgs/oakwoods-img1.jpg" data-lightbox="image-3" data-title="Full rebuild of an existing car auction management system. Features include: Inventory Tracking, Auction Day Management, Dealer Information (payments, cars sold / purchased, email marketing, and all contact inforamtion), and Bookkeeping. *Due to the proprietary nature of this web application, only the login screen is available for viewing.">
-							<div class="img-overlay">
-								<div>Oakwood's Arrow Auto Auction</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/oakwoods-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item qa" data-category="artwork">
-						<a href="imgs/oodubai-img1.jpg" data-lightbox="image-4" data-title="Impilmentation of language selector and constuction of landing pages for each language site.">
-							<div class="img-overlay">
-								<div>One & Only Resorts</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/ooresorts-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item fed ux qa" data-category="web">
-						<a href="imgs/jccfs-img1.jpg" data-lightbox="image-5" data-title="Complete non-profit school management and operation system. Including front end site rebuild and marketing CRM *Site is still under construction and is scheduled to launch early 2015.">
-							<div class="img-overlay">
-								<div>John C. Campbell Folk School (Launch scheduled early 2015)</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/jccfs-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item ux qa" data-category="graphic">
-						<a href="imgs/withbenefits-img2.jpg" data-lightbox="image-6" data-title="Insurance Broker CRM and Account Management system include full marketing system using Mandrill as the mailing agent. *Due to the proprietary nature of this web application, only the front end is available for viewing.">
-							<div class="img-overlay">
-								<div>Withbenefits</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/withbenefits-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item qa" data-category="artwork">
-						<a href="imgs/alma-img2.jpg" data-lightbox="image-7" data-title="Reworking of previously built aspects of site and additon of newsletter lightbox.">
-							<div class="img-overlay">
-								<div>Alma Agency</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/alma-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item qa" data-category="artwork">
-						<a href="imgs/quaker-img2.jpg" data-lightbox="image-8" data-title="Full site build including Isotope filtered recipe section">
-							<div class="img-overlay">
-								<div>Ouaker Oats (Spanish Language Site)</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/quaker-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item qa" data-category="web">
-						<a href="imgs/blueproject-img2.jpg" data-lightbox="image-9" data-title="Full site build based on WordPress template.">
-							<div class="img-overlay">
-								<div>Atlantis Blue Project</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/blueproject-img1.jpg">
-						</a>
-					</div>
-					<div class="portfolio-item qa" data-category="graphic">
-						<a href="imgs/atlantisapp-img1.png" data-lightbox="image-10" data-title="Creation and concept of both Bahamas and Dubai locations mobile app store applications">
-							<div class="img-overlay">
-								<div>Atlantis Paradise Island, Bahamas (Mobile App)</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/atlantisapp-img1.png">
-						</a>
-					</div>
-					<div class="portfolio-item fed qa" data-category="artwork">
-						<a href="imgs/dci-img1.jpg" data-lightbox="image-11" data-title="Full 15 page brochure site based on PSD design. Also implementation of open source CMS called Devise. *Launch is scheduled for late 2014.">
-							<div class="img-overlay">
-								<div>Digital Connections Inc. (Launch scheduled for late 2014)</div>
-								<div class="mobile-text">(tap again for example)</div>
-							</div>
-							<img src="imgs/dci-img1.jpg">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div> -->
 		<div class="container section-wpr off-white skills-wpr">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="sub-section-wpr">
 					<span class="skills-title">SKILLS</span>
 						<div class="row">
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 skills-content">
 								<div class="skills-subtext-wpr">
 									<p class="skills-subtext">Worked with Justinmind and InVision UX prototyping.</p>
 								</div>
@@ -305,9 +221,9 @@
 									<span>UX Design</span>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of Bootstrap and custom columning. Also skilled in the use of media queries.</p>
+									<p class="skills-subtext">Advanced knowledge of custom columning and use of media queries.</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -317,81 +233,77 @@
 									<span>Responsive</span>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-0 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of Bootstrap and custom columning. Also skilled in the use of media queries.</p>
+									<p class="skills-subtext">Understanding of Gulp tasking and JSON usage.</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
-									<i class="fa fa-mobile fa-stack-1x"></i>
+									<i class="fa fa-magic fa-stack-1x"></i>
 								</span>
 								<div class="text-wpr">
-									<span>Responsive</span>
+									<span>Gulp</span>
 								</div>
 							</div>
 						</div>
-						<br>
-						<br>
 						<div class="row">
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-md-offset-0 col-lg-offset-1 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Complete undstanding and use also familiar with WC3 validation.</p>
+									<p class="skills-subtext">Complete undstanding and use. Also familiar with WC3 validation.</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
-									<i class="fa fa-lightbulb-o fa-stack-1x"></i>
+									<i class="fa fa-cubes fa-stack-1x"></i>
 								</span>
 								<div class="text-wpr">
 									<span>HTML5</span>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of CSS3, Sass, Gulp, and Bootstrap CSS.</p>
-								</div>
-								<span class="skills-icon fa-stack fa-lg">
-									<i class="fa fa-circle-thin fa-stack-2x"></i>
-									<i class="fa fa-lightbulb-o fa-stack-1x"></i>
-								</span>
-								<div class="text-wpr">
-									<span>CSS3</span>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 skills-content">
-								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of Sass, Gulp, and Bootstrap CSS.</p>
+									<p class="skills-subtext">Advanced knowledge of CSS3 Bootstrap CSS.</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
 									<i class="fa fa-pencil fa-stack-1x"></i>
 								</span>
 								<div class="text-wpr">
-									<span>Sass</span>
+									<span>CSS3</span>
 								</div>
 							</div>
-						</div>
-						<br>
-						<br>
-						<div class="row">
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 skills-content">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-sm-offset-4 col-md-offset-4 col-lg-offset-0 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of Angular JS, Backbone JS, Bootstrap JS, and jQuery.</p>
+									<p class="skills-subtext">Full understanding of Sass and Gulp Tasking</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
 									<i class="fa fa-heart-o fa-stack-1x"></i>
 								</span>
 								<div class="text-wpr">
-									<span>Javascript</span>
+									<span>Sass</span>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-content">
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-md-offset-0 col-lg-offset-2 skills-content">
 								<div class="skills-subtext-wpr">
-									<p class="skills-subtext">Advanced knowledge of CSS3, Sass, Gulp, and Bootstrap CSS.</p>
+									<p class="skills-subtext">Advanced knowledge of Angular JS, Backbone JS, and jQuery.</p>
 								</div>
 								<span class="skills-icon fa-stack fa-lg">
 									<i class="fa fa-circle-thin fa-stack-2x"></i>
 									<i class="fa fa-lightbulb-o fa-stack-1x"></i>
+								</span>
+								<div class="text-wpr">
+									<span>Javascript</span>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 skills-content">
+								<div class="skills-subtext-wpr">
+									<p class="skills-subtext">Worked in WordPress, Laravel, and used custom framework setups.</p>
+								</div>
+								<span class="skills-icon fa-stack fa-lg">
+									<i class="fa fa-circle-thin fa-stack-2x"></i>
+									<i class="fa fa-cogs fa-stack-1x"></i>
 								</span>
 								<div class="text-wpr">
 									<span>Frameworks</span>

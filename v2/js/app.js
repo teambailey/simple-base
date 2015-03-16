@@ -21,6 +21,8 @@ $(function() {
 		$('.menu').toggleClass('slide');
 		$('.menu-links-text').toggleClass('slide');
 		$('.nav-bg-mask').toggleClass('is-open');
+
+		$('body').toggleClass('overflow-hidden');
 	});
 
 	/*FIXED HEADER*/
@@ -64,8 +66,38 @@ $(function() {
 		$('.menu').removeClass('slide');
 		$('.menu-links-text').removeClass('slide');
 		$('.nav-bg-mask').removeClass('is-open');
-
+		$('body').removeClass('overflow-hidden');
 	});
+
+	// Works Click
+	console.log($( '.works-img' ).width()/2);
+
+	$('.works-content').on('click', function(event) {
+		var windowWidth = $(window).width();
+			imgWidth = $('.works-img-wpr').width();
+			horzCenterImg = (windowWidth-imgWidth)/2;
+			locationID = $(this).find('img').attr('data-img');
+
+		$('#' + locationID + '-img').css({
+			left: horzCenterImg + 'px',
+		});
+
+		$('#' + locationID + '-img').closest('.works-img-wpr').show();
+
+		$('.works-bg-mask').addClass('is-open');
+		$('body').addClass('overflow-hidden');
+		$('.fa-close').show();
+
+		$('#works-scrollTarget').scrollView();
+	});
+
+	$('.works-bg-mask, .works-img, .fa-close').on('click', function(event) {
+		$('.works-img-wpr').hide();
+		$('.works-bg-mask').removeClass('is-open');
+		$('body').removeClass('overflow-hidden');
+		$('.fa-close').hide();
+	});
+
 
 	// Skills Hover
 	$('.skills-content').hover( function(event) {

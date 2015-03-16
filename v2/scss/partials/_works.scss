@@ -2,6 +2,14 @@
 .works-wpr {
     position: relative;
 
+    .works-bg-mask {
+        @extend .nav-bg-mask;
+
+        &.is-open {
+            display: block;
+        }
+    }
+
     .works {
 
         .works-title {
@@ -16,6 +24,41 @@
 
         .works-content-wpr  {
             padding: 85px 80px 50px;
+            position: relative;
+
+            .fa-close {
+                position: absolute;
+                top:100px;
+                right:70px;
+                z-index: 9998;
+
+                display: none;
+
+                color:$white;
+                font-size: 4em;
+
+                cursor: pointer;
+            }
+
+            .works-img-wpr {
+                display: none;
+                position: absolute;
+                z-index: 9998;
+                height: 600px;
+                width:750px;
+                top:155px;
+
+                .works-img {
+                    width: 100%;
+
+                    ~ span {
+                        text-decoration: underline;
+                        color:$white;
+                        font-size: 3em;
+
+                    }
+                }
+            }
 
             .works-content {
                 position: relative;
@@ -30,7 +73,7 @@
 
                 .works-content-text {
                     position: absolute;
-                    top:50%;
+                    top:40%;
                     right:25%;
                     left:25%;
                     color:$white;
@@ -57,83 +100,53 @@
 
 
 
+@media all and (max-width: 1200px) {
+    .works-wpr .works .works-content-wpr .works-content .works-content-text {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .works-wpr .works .works-content-wpr .works-content .works-content-text {
+        font-size: 1.2em;
+    }
+
+    .works-wpr .works .works-content-wpr .works-img-wpr .works-img~span {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    .works-wpr .works .works-content-wpr .works-img-wpr {
+        height: 300px;
+        width:400px;
+    }
+
+    .works-wpr .works .works-content-wpr {
+        padding: 85px 5px 0;
+    }
+
+}
+
+@media all and (max-width: 400px) {
+
+    .works-wpr .works .works-content-wpr .works-img-wpr {
+        height: 200px;
+        width:300px;
+    }
+
+    .works-wpr .works .works-content-wpr .fa-close {
+        display: none !important;
+    }
+
+}
 
 
 
 
-// Isotope Section
 
-// .isotope-section {
-//     padding:65px 0 65px 40px;
 
-//     h3 {
-//         padding-right:40px;
-//     }
 
-//     .button-group {
-//         margin-bottom:20px;
 
-//         .btn {
-//             font-size:$small;
-//             font-weight:$normal;
-//             color:$grey;
-//             line-height:21px;
-//             border: 1px solid $grey;
-//             padding: 0 6px;
-//             margin-right: 8px;
-//             background-color:transparent;
-
-//             &:hover,
-//             &.is-checked {
-//                 color:$white;
-//                 border: 1px solid $white;
-//             }
-
-//             &:focus {
-//                 outline: none;
-//             }
-//         }
-//     }
-
-//     .portfolio-item {
-//         margin-right:30px;
-//         margin-bottom:30px;
-//         overflow:hidden;
-
-//         .img-overlay {
-//             height:187px;
-//             width: 220px;
-//             background-color:rgba(102,109,136, .8);
-//             color:$white;
-//             font-size: 20px;
-//             text-align: center;
-//             padding-top:30%;
-//             position: absolute;
-//             top:0;
-//             left:0;
-//             z-index: 1;
-//             display: none;
-
-//             .mobile-text {
-//                 display: none;
-//             }
-
-//             &:hover ~ img {
-//             -webkit-transition: all 1s ease-in-out; /* Safari and Chrome */
-//              -moz-transition: all 1s ease-in-out; /* Firefox */
-//               -ms-transition: all 1s ease-in-out; /* IE 9 */
-//                -o-transition: all 1s ease-in-out; /* Opera */
-//                 transition: all 1s ease-in-out;
-//                 position: relative;
-
-//             -webkit-transform:scale(1.5); /* Safari and Chrome */
-//              -moz-transform:scale(1.5); /* Firefox */
-//               -ms-transform:scale(1.5); /* IE 9 */
-//                -o-transform:scale(1.5); /* Opera */
-//                 transform:scale(1.5);
-
-//             }
-//         }
-//     }
-// }
 

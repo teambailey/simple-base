@@ -1,5 +1,10 @@
 // Skills
 
+// Sub Section Wrapper
+.sub-section-wpr {
+    padding: 80px 60px 30px;
+}
+
 .skills-wpr {
     position: relative;
     overflow: hidden;
@@ -14,8 +19,17 @@
         letter-spacing: -13px;
     }
 
+    .row {
+        margin-top: 30px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
     .skills-content {
         position: relative;
+
 
         &:hover .skills-icon {
             transform: rotate(-360deg);
@@ -72,12 +86,70 @@
 
 }
 
-// Sub Section Wrapper
-.sub-section-wpr {
-    padding: 80px 60px 30px;
+// @media all and (max-width: 992px) {
+//     .works-wpr .works .works-content-wpr .works-content .works-content-text {
+//         font-size: 1.2em;
+//     }
 
-    // .text-wpr {
-    //     padding-left:80px;
-    //     margin-top: -70px;
-    // }
+//     .works-wpr .works .works-content-wpr .works-img-wpr .works-img~span {
+//         font-size: 1.5em;
+//     }
+// }
+
+// @media all and (max-width: 768px) {
+
+//     .works-wpr .works .works-content-wpr .works-img-wpr {
+//         height: 300px;
+//         width:400px;
+//     }
+
+//     .works-wpr .works .works-content-wpr {
+//         padding: 85px 5px 0;
+//     }
+
+// }
+
+// @media all and (max-width: 400px) {
+
+//     .works-wpr .works .works-content-wpr .works-img-wpr {
+//         height: 200px;
+//         width:300px;
+//     }
+
+//     .works-wpr .works .works-content-wpr .fa-close {
+//         display: none !important;
+//     }
+
+// }
+
+
+
+
+@media all and (min-width: 768px) and (max-width: 1200px){
+
+    .skills-content:nth-of-type(1),
+    .skills-content:nth-of-type(2){
+        margin: 20px 0;
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    .skills-wpr .row {
+        margin-top: 0;
+    }
+
+    .skills-content:nth-of-type(3) {
+        display: none;
+    }
+
+    .skills-wpr .skills-content .text-wpr {
+        font-size: 2em;
+        margin-top: -55px;
+        margin-bottom: 16px;
+    }
+
+    .skills-wpr .skills-content .skills-subtext-wpr .skills-subtext {
+        font-size: .8em;
+    }
 }

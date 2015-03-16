@@ -3,6 +3,10 @@ html body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', 'Helvetica', 'Arial', sans-serif !important;
     position: relative;
+
+    &.overflow-hidden {
+        overflow: hidden;
+    }
 }
 
 h2 {
