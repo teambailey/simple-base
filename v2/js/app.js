@@ -28,7 +28,7 @@ $(function() {
 
 		var head = $('.fixed-header');
 
-		if($(this).scrollTop() > 90) {
+		if($(this).scrollTop() > 112) {
 			 head.addClass('fixed');
 		}else {
 			head.removeClass('fixed');
@@ -66,55 +66,6 @@ $(function() {
 		$('.nav-bg-mask').removeClass('is-open');
 
 	});
-
-	// ISOTOPE STUFF
-	// init Isotope
-	// var $container = $('.isotope').imagesLoaded(function(){
-
-	// 	$container.isotope({
-	//     	itemSelector: '.portfolio-item',
-	// 	});
-	// });
-
-	// // Production loading issue hack
-	// $('.is-checked').trigger('click');
-
-	// // bind filter button click
-	// $('#filters').on( 'click', 'button', function() {
-	// 	var filterValue = $( this ).attr('data-filter');
- //    		// use filterFn if matches value
-	// 		$container.isotope({ filter: filterValue });
-
- //  		});
-	//   	// change is-checked class on buttons
- //  		$('.button-group').each( function( i, buttonGroup ) {
- //    		var $buttonGroup = $( buttonGroup );
-
- //    		$buttonGroup.on( 'click', 'button', function() {
-	// 			$buttonGroup.find('.is-checked').removeClass('is-checked');
-
-	// 			$( this ).addClass('is-checked');
-	//     	});
-	// 	});
-
-	// // Overlay Hover
-	// $('.portfolio-item').on('mouseenter', function(event) {
-	// 	event.preventDefault();
-
-	// 	var overlay = $(this).find('.img-overlay');
-
-	// 	overlay.css('display', 'block');
-
-	// });
-
-	// $('.portfolio-item').on('mouseleave', function(event) {
-	// 	event.preventDefault();
-
-	// 	var overlay = $(this).find('.img-overlay');
-
-	// 	overlay.css('display', 'none');
-
-	// });
 
 	// Skills Hover
 	$('.skills-content').hover( function(event) {
