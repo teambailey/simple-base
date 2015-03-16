@@ -1,10 +1,26 @@
 $(function() {
 
-	$('.toggle-slide-down, .menu-close-btn').on('click', function(event) {
+    $('#bg-img1').each(function(){
+        var $bgobj = $(this); // assigning the object
+        	$window = $(window);
+
+        $(window).scroll(function() {
+            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+
+            // Put together our final background position
+            var coords = '50% '+ yPos + 'px';
+
+            // Move the background
+            $bgobj.css({ backgroundPosition: coords });
+        });
+    });
+
+	$('.toggle-slide-down, .menu-close, .nav-bg-mask').on('click', function(event) {
 		event.preventDefault();
 
 		$('.menu').toggleClass('slide');
 		$('.menu-links-text').toggleClass('slide');
+		$('.nav-bg-mask').toggleClass('is-open');
 	});
 
 	/*FIXED HEADER*/
@@ -33,7 +49,7 @@ $(function() {
 	$.fn.scrollView = function () {
 	    return this.each(function () {
 	        $('html, body').animate({
-	            scrollTop: $(this).offset().top
+	            scrollTop: $(this).offset().top - 44
 	        }, 600);
 	    });
 	};
@@ -47,56 +63,63 @@ $(function() {
 		$('.' + locationID + '-wpr').scrollView();
 		$('.menu').removeClass('slide');
 		$('.menu-links-text').removeClass('slide');
+		$('.nav-bg-mask').removeClass('is-open');
 
 	});
 
 	// ISOTOPE STUFF
 	// init Isotope
-	var $container = $('.isotope').imagesLoaded(function(){
+	// var $container = $('.isotope').imagesLoaded(function(){
 
-		$container.isotope({
-	    	itemSelector: '.portfolio-item',
-		});
-	});
+	// 	$container.isotope({
+	//     	itemSelector: '.portfolio-item',
+	// 	});
+	// });
 
-	// Production loading issue hack
-	$('.is-checked').trigger('click');
+	// // Production loading issue hack
+	// $('.is-checked').trigger('click');
 
-	// bind filter button click
-	$('#filters').on( 'click', 'button', function() {
-		var filterValue = $( this ).attr('data-filter');
-    		// use filterFn if matches value
-			$container.isotope({ filter: filterValue });
+	// // bind filter button click
+	// $('#filters').on( 'click', 'button', function() {
+	// 	var filterValue = $( this ).attr('data-filter');
+ //    		// use filterFn if matches value
+	// 		$container.isotope({ filter: filterValue });
 
-  		});
-	  	// change is-checked class on buttons
-  		$('.button-group').each( function( i, buttonGroup ) {
-    		var $buttonGroup = $( buttonGroup );
+ //  		});
+	//   	// change is-checked class on buttons
+ //  		$('.button-group').each( function( i, buttonGroup ) {
+ //    		var $buttonGroup = $( buttonGroup );
 
-    		$buttonGroup.on( 'click', 'button', function() {
-				$buttonGroup.find('.is-checked').removeClass('is-checked');
+ //    		$buttonGroup.on( 'click', 'button', function() {
+	// 			$buttonGroup.find('.is-checked').removeClass('is-checked');
 
-				$( this ).addClass('is-checked');
-	    	});
-		});
+	// 			$( this ).addClass('is-checked');
+	//     	});
+	// 	});
 
-	// Overlay Hover
-	$('.portfolio-item').on('mouseenter', function(event) {
-		event.preventDefault();
+	// // Overlay Hover
+	// $('.portfolio-item').on('mouseenter', function(event) {
+	// 	event.preventDefault();
 
-		var overlay = $(this).find('.img-overlay');
+	// 	var overlay = $(this).find('.img-overlay');
 
-		overlay.css('display', 'block');
+	// 	overlay.css('display', 'block');
 
-	});
+	// });
 
-	$('.portfolio-item').on('mouseleave', function(event) {
-		event.preventDefault();
+	// $('.portfolio-item').on('mouseleave', function(event) {
+	// 	event.preventDefault();
 
-		var overlay = $(this).find('.img-overlay');
+	// 	var overlay = $(this).find('.img-overlay');
 
-		overlay.css('display', 'none');
+	// 	overlay.css('display', 'none');
 
+	// });
+
+	// Skills Hover
+	$('.skills-content').hover( function(event) {
+
+		$(this).find('.skills-subtext-wpr').toggleClass('has-hover');
 	});
 
 	/* AJAX CONTACT FORM */

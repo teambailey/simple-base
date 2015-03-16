@@ -1,28 +1,5 @@
 
 // Sprites
-.chevron-r {
-    background: url('imgs/spritesheet.png') no-repeat -5px -4px;
-    width: 16px;
-    height: 27px;
-
-    position: absolute;
-    top: 50%;
-    left:50%;
-    z-index: 5;
-    display: inline-block;
-}
-
-.chevron-l {
-    background: url('imgs/spritesheet.png') no-repeat -6px -37px;
-    width: 16px;
-    height: 27px;
-
-    position: absolute;
-    top: 50%;
-    right:50%;
-    z-index: 5;
-    display: inline-block;
-}
 
 .facebook-icon {
     background: url('imgs/spritesheet.png') no-repeat -5px -75px;

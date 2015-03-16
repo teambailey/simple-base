@@ -1,0 +1,83 @@
+// Skills
+
+.skills-wpr {
+    position: relative;
+    overflow: hidden;
+
+    .skills-title {
+        position: absolute;
+        left:10px;
+        top: -35px;
+
+        opacity: .1;
+        font-size: 6.5em;
+        letter-spacing: -13px;
+    }
+
+    .skills-content {
+        position: relative;
+
+        &:hover .skills-icon {
+            transform: rotate(-360deg);
+            background-color: green;
+            color: $white;
+        }
+
+        &:hover .text-wpr h4 {
+            color:$white;
+        }
+
+        .skills-icon {
+            transition: all 300ms ease-in-out;
+            border-radius: 50px;
+            font-size:2.5em;
+        }
+
+        .skills-subtext-wpr {
+            position: absolute;
+            top: 0;
+            left:16px;
+
+            // overflow:hidden;
+            height:70px;
+            border-radius:50px;
+            width:0%;
+
+            transition: all 300ms ease-in-out;
+
+            &.has-hover {
+                width:90%;
+                background-color:green;
+
+                .skills-subtext {
+                    transition: all 1200ms ease-in-out;
+                    opacity: 1;
+                }
+            }
+
+            .skills-subtext {
+                opacity: 0;
+                font-size: 1em;
+                color:$white;
+                padding:16px 10px 16px 75px;
+            }
+        }
+
+        .text-wpr {
+            margin-top:-65px;
+            padding-left: 80px;
+            font-size:3em;
+        }
+    }
+
+}
+
+// Sub Section Wrapper
+.sub-section-wpr {
+    padding: 80px 60px 30px;
+
+    // .text-wpr {
+    //     padding-left:80px;
+    //     margin-top: -70px;
+    // }
+}

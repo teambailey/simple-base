@@ -1,76 +1,139 @@
-// Isotope Section
+// Works Section
+.works-wpr {
+    position: relative;
 
-.isotope-section {
-    padding:65px 0 65px 40px;
+    .works {
 
-    h3 {
-        padding-right:40px;
-    }
-
-    .button-group {
-        margin-bottom:20px;
-
-        .btn {
-            font-size:$small;
-            font-weight:$normal;
-            color:$grey;
-            line-height:21px;
-            border: 1px solid $grey;
-            padding: 0 6px;
-            margin-right: 8px;
-            background-color:transparent;
-
-            &:hover,
-            &.is-checked {
-                color:$white;
-                border: 1px solid $white;
-            }
-
-            &:focus {
-                outline: none;
-            }
-        }
-    }
-
-    .portfolio-item {
-        margin-right:30px;
-        margin-bottom:30px;
-        overflow:hidden;
-
-        .img-overlay {
-            height:187px;
-            width: 220px;
-            background-color:rgba(102,109,136, .8);
-            color:$white;
-            font-size: 20px;
-            text-align: center;
-            padding-top:30%;
+        .works-title {
             position: absolute;
-            top:0;
             left:0;
-            z-index: 1;
-            display: none;
+            top: -35px;
 
-            .mobile-text {
-                display: none;
-            }
+            opacity: .2;
+            font-size: 6.5em;
+            letter-spacing: -12px;
+        }
 
-            &:hover ~ img {
-            -webkit-transition: all 1s ease-in-out; /* Safari and Chrome */
-             -moz-transition: all 1s ease-in-out; /* Firefox */
-              -ms-transition: all 1s ease-in-out; /* IE 9 */
-               -o-transition: all 1s ease-in-out; /* Opera */
-                transition: all 1s ease-in-out;
+        .works-content-wpr  {
+            padding: 85px 80px 50px;
+
+            .works-content {
                 position: relative;
+                overflow: hidden;
+                opacity: 1;
 
-            -webkit-transform:scale(1.5); /* Safari and Chrome */
-             -moz-transform:scale(1.5); /* Firefox */
-              -ms-transform:scale(1.5); /* IE 9 */
-               -o-transform:scale(1.5); /* Opera */
-                transform:scale(1.5);
+                text-align: center;
+
+                img {
+                    transition: all 500ms ease-in-out;
+                }
+
+                .works-content-text {
+                    position: absolute;
+                    top:50%;
+                    right:25%;
+                    left:25%;
+                    color:$white;
+                    font-size: 2em;
+
+                    transform: scale(0);
+
+                    transition: all 500ms ease-in-out;
+                }
+
+                &:hover img{
+                    transform: scale(1.5);
+                    opacity: .2;
+                }
+
+                &:hover .works-content-text{
+                    transform: scale(1);
+                }
 
             }
         }
     }
 }
+
+
+
+
+
+
+
+// Isotope Section
+
+// .isotope-section {
+//     padding:65px 0 65px 40px;
+
+//     h3 {
+//         padding-right:40px;
+//     }
+
+//     .button-group {
+//         margin-bottom:20px;
+
+//         .btn {
+//             font-size:$small;
+//             font-weight:$normal;
+//             color:$grey;
+//             line-height:21px;
+//             border: 1px solid $grey;
+//             padding: 0 6px;
+//             margin-right: 8px;
+//             background-color:transparent;
+
+//             &:hover,
+//             &.is-checked {
+//                 color:$white;
+//                 border: 1px solid $white;
+//             }
+
+//             &:focus {
+//                 outline: none;
+//             }
+//         }
+//     }
+
+//     .portfolio-item {
+//         margin-right:30px;
+//         margin-bottom:30px;
+//         overflow:hidden;
+
+//         .img-overlay {
+//             height:187px;
+//             width: 220px;
+//             background-color:rgba(102,109,136, .8);
+//             color:$white;
+//             font-size: 20px;
+//             text-align: center;
+//             padding-top:30%;
+//             position: absolute;
+//             top:0;
+//             left:0;
+//             z-index: 1;
+//             display: none;
+
+//             .mobile-text {
+//                 display: none;
+//             }
+
+//             &:hover ~ img {
+//             -webkit-transition: all 1s ease-in-out; /* Safari and Chrome */
+//              -moz-transition: all 1s ease-in-out; /* Firefox */
+//               -ms-transition: all 1s ease-in-out; /* IE 9 */
+//                -o-transition: all 1s ease-in-out; /* Opera */
+//                 transition: all 1s ease-in-out;
+//                 position: relative;
+
+//             -webkit-transform:scale(1.5); /* Safari and Chrome */
+//              -moz-transform:scale(1.5); /* Firefox */
+//               -ms-transform:scale(1.5); /* IE 9 */
+//                -o-transform:scale(1.5); /* Opera */
+//                 transform:scale(1.5);
+
+//             }
+//         }
+//     }
+// }
 

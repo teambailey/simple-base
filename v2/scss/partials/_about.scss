@@ -1,34 +1,66 @@
 // About Section
-.section-wpr.about-wpr {
-    border: none;
+#bg-img1 {
+    background: url(../imgs/v4.jpg) 0 / 1500px no-repeat fixed;
+    background-position: 50% 0;
+    position: relative;
+    height: 800px;
+    min-height: 300px;
+    max-height:1200px;
 
-    .about-text-wpr {
-        padding: 65px 40px 0 65px;
+    .section-wpr.about-wpr {
+        border: none;
+        position: absolute;
+        bottom: 0;
 
-        .about-text {
-            @extend h3;
+        .about-text-wpr {
+            position: relative;
+            text-align: center;
+            padding: 50px 60px 30px;
+            overflow: hidden;
 
-            span:first-of-type {
-                display: block;
-                margin: 16px 0 10px;
-                line-height: 24px;
+            .about-title {
+                position: absolute;
+                left:0;
+                top: -35px;
+
+                opacity: .1;
+                font-size: 6.5em;
+                letter-spacing: -12px;
             }
 
-            p {
-                padding:10px 30px 0 30px;
-                color: $pink;
-                font-size: $large;
-                font-weight: $light;
-                line-height: 28px;
+            .about-text {
+                text-align: left;
 
-                span{
+                .about-lead {
+                    display: block;
+                    margin: 20px 0 35px;
+                    line-height: 24px;
+
+                    b {
+                        color:$pink;
+                    }
+                }
+
+                .about-quote{
+                    display: inline-block;
+                    font-family: 'Julius Sans One';
                     color: $pink;
+                    font-size: $large;
+                    font-weight: $light;
+                    line-height: 28px;
+                    margin-bottom: 36px;
                 }
             }
         }
-    }
 
-    .about-img {
-        width:100%;
+        .about-img {
+            width:100%;
+        }
     }
 }
+
+ @media all and (min-width: 1501px) {
+    #bg-img1 {
+        background-size:100%;
+    }
+ }

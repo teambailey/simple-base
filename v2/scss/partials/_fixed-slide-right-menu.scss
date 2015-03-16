@@ -1,4 +1,18 @@
 // Fixed-Slide-Right-Menu
+.nav-bg-mask{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: $black;
+    opacity: .4;
+    z-index: 9997;
+    display: none;
+
+    &.is-open {
+        display: block;
+    }
+}
+
 nav {
     transition: margin-top 300ms ease-in-out;
 
@@ -15,52 +29,63 @@ nav {
         list-style-type: none;
         font-weight: 600;
 
-
         li {
-            background-color: $light-sky-blue;
-            border-bottom: 3px solid $grey;
-
-            // &:first-of-type {
-            //     padding: 10px 0;
-            // }
+            display: block;
+            width:250px;
 
             .meun-link {
+                border-bottom: 2px solid $grey;
+                border-left: 2px solid $grey;
+                background-color: $light-sky-blue;
                 display: block;
                 padding:30px 155px;
 
                 position: relative;
                 overflow: hidden;
 
+                transition: all 500ms ease-in-out;
+
+                &:hover {
+                    background-color: darken($light-sky-blue, 5%);
+                    border-bottom: 2px solid $white;
+                    // border-left: 2px solid $white;
+
+
+                    .menu-links-text {
+                        opacity: 1;
+                        color: $white;
+                        transition: top 400ms ease-in-out;
+
+                        &.slide {
+                            top: -8px;
+                        }
+                    }
+                }
+
                 .menu-links-text {
                     position: absolute;
-                    bottom: -70px;
-                    left:0;
-                    font-size: 4.5em;
+                    top: -42px;
+                    left:0px;
 
-                    transition: bottom 800ms ease-in-out;
+                    letter-spacing: -9px;
+                    font-size: 4.5em;
+                    opacity: .8;
+
+                    transition: top 800ms ease-in-out;
 
                     &.slide {
-                        bottom: -34px;
+                        top: -24px;
                     }
                 }
             }
 
             .menu-close {
-                // display: block;
                 padding:25px 155px;
-                // margin: 0 auto;
-                // background-color: transparent;
-                // border: 1px solid #428bca;
-                // color:#428bca;
-
-                // &:hover {
-                //     color:$grey;
-                //     border: 1px solid $grey;
-                // }
 
                 .menu-close-text {
                     bottom: -45px;
                     font-size: 2.5em;
+                    letter-spacing: -3px;
 
                     &.slide {
                         bottom:-12px;
@@ -68,6 +93,9 @@ nav {
                 }
             }
         }
+
+        li:last-of-type .meun-link { border-bottom-left-radius: 8px; }
+
     }
 }
 
@@ -80,96 +108,6 @@ nav {
 //   Start of NAV.JS CSS
 //
 // *************************************
-// FIXED MENU SLIDE RIGHT
-// .mask {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 15;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(0, 0, 0, 0.8);
-// }
-
-// .nav-toggler:focus {
-//     border:transparent;
-
-//     &:hover {
-//         color: transparent;
-//         cursor: default;
-//     }
-// }
-
-// /* general style for all menus */
-// nav.menu {
-//     position: fixed;
-//     z-index: 20;
-//     background-color: #67b5d1;
-//     overflow: hidden;
-//     -webkit-transition: all 0.3s;
-//     -moz-transition: all 0.3s;
-//     -ms-transition: all 0.3s;
-//     -o-transition: all 0.3s;
-//     transition: all 0.3s;
-// }
-// nav.menu ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-// }
-// nav.menu a {
-//     font-weight: 300;
-//     color: #fff;
-//     text-decoration: none;
-// }
-// button.close-menu {
-//     background-color: #3184a1;
-//     color: #fff;
-// }
-// button.close-menu:focus {
-//     outline: none
-// }
-// /* slide menu right */
-// nav.slide-menu-right {
-//     top: 0;
-//     width: 300px;
-//     height: 100%;
-// }
-// nav.slide-menu-right li {
-//     display: block;
-//     text-align: center;
-//     border-bottom: solid 1px #3184a1;
-//     border-top: solid 1px #b5dbe9;
-// }
-// nav.slide-menu-right li:first-child {
-//     border-top: none
-// }
-// nav.slide-menu-right li:last-child {
-//     border-bottom: none
-// }
-// nav.slide-menu-right a {
-//     display: block;
-//     padding: 10px;
-//     font-size: 18px;
-// }
-// nav.slide-menu-right button.close-menu {
-//     margin: 10px 0;
-//     padding: 10px 30px;
-//     background-color: #3184a1;
-//     color: #fff;
-// }
-// nav.slide-menu-right {
-//     right: -300px
-// }
-// body.smr-open nav.slide-menu-right {
-//     right: 0
-// }
-// body.pml-open #wrapper {
-//     left: 300px
-// }
-// body.pmr-open #wrapper {
-//     left: -300px
-// }
 
 // @media all and (max-width: 330px) {
 //     nav.slide-menu-right {

@@ -1,5 +1,16 @@
 // Contact Section
 .contact-section {
+    position: relative;
+
+    .contact-title {
+        position: absolute;
+        left:-30px;
+        top: 17px;
+
+        opacity: .1;
+        font-size: 6.5em;
+        letter-spacing: -9px;
+    }
 
     h2,
     h3 {
