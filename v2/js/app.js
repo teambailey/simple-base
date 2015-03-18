@@ -70,8 +70,6 @@ $(function() {
 	});
 
 	// Works Click
-	console.log($( '.works-img' ).width()/2);
-
 	$('.works-content').on('click', function(event) {
 		var windowWidth = $(window).width();
 			imgWidth = $('.works-img-wpr').width();
