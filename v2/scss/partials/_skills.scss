@@ -45,6 +45,18 @@
             transition: all 300ms ease-in-out;
             border-radius: 50px;
             font-size:2.5em;
+
+            .fa-cubes {
+                margin-left: 2px;
+            }
+
+            .fa-heart-o {
+                margin-top: 3px;
+            }
+
+            .fa-cogs {
+                margin-left: -2px;
+            }
         }
 
         .skills-subtext-wpr {
@@ -52,7 +64,6 @@
             top: 0;
             left:16px;
 
-            // overflow:hidden;
             height:70px;
             border-radius:50px;
             width:0%;
@@ -85,45 +96,6 @@
     }
 
 }
-
-// @media all and (max-width: 992px) {
-//     .works-wpr .works .works-content-wpr .works-content .works-content-text {
-//         font-size: 1.2em;
-//     }
-
-//     .works-wpr .works .works-content-wpr .works-img-wpr .works-img~span {
-//         font-size: 1.5em;
-//     }
-// }
-
-// @media all and (max-width: 768px) {
-
-//     .works-wpr .works .works-content-wpr .works-img-wpr {
-//         height: 300px;
-//         width:400px;
-//     }
-
-//     .works-wpr .works .works-content-wpr {
-//         padding: 85px 5px 0;
-//     }
-
-// }
-
-// @media all and (max-width: 400px) {
-
-//     .works-wpr .works .works-content-wpr .works-img-wpr {
-//         height: 200px;
-//         width:300px;
-//     }
-
-//     .works-wpr .works .works-content-wpr .fa-close {
-//         display: none !important;
-//     }
-
-// }
-
-
-
 
 @media all and (min-width: 768px) and (max-width: 1200px){
 
