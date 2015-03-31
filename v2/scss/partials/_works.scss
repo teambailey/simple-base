@@ -74,8 +74,8 @@
                 .works-content-text {
                     position: absolute;
                     top:40%;
-                    right:25%;
-                    left:25%;
+                    right:0;
+                    left:0;
                     color:$white;
                     font-size: 2em;
 
@@ -129,7 +129,7 @@
 
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 575px) {
 
     .works-wpr .works .works-content-wpr .works-img-wpr {
         height: 200px;
@@ -138,6 +138,39 @@
 
     .works-wpr .works .works-content-wpr .fa-close {
         display: none !important;
+    }
+
+    .works-wpr .works {
+
+        .works-content-wpr {
+            padding: 55px 5px 30px;
+        }
+
+        .works-title {
+            top:-16px;
+            font-size: 3em;
+            letter-spacing: -5px;
+        }
+
+        #works-scrollTarget .works-content {
+            padding-bottom: 4px;
+
+            .works-content-text {
+                top:221px;
+                background-color: rgba(233,82,88, .9);
+                transform: scale(1);
+                font-weight: bold;
+                border-bottom:2px solid $white;
+
+                &.half-width {
+                    top:136px;
+                }
+
+                &.full-width {
+                    top:82px;
+                }
+            }
+        }
     }
 
 }

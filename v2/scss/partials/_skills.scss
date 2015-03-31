@@ -29,6 +29,7 @@
 
     .skills-content {
         position: relative;
+        padding:0;
 
 
         &:hover .skills-icon {
@@ -105,7 +106,7 @@
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 331px) and (max-width: 768px) {
 
     .skills-wpr .row {
         margin-top: 0;
@@ -123,5 +124,37 @@
 
     .skills-wpr .skills-content .skills-subtext-wpr .skills-subtext {
         font-size: .8em;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    .skills-wpr .skills-content {
+        padding-bottom: 15px;
+
+        .text-wpr {
+            font-size: 2.5em;
+            line-height: 55px;
+        }
+    }
+
+    .skills-wpr .row {
+        margin-top: 0;
+    }
+
+    .skills-wpr .sub-section-wpr {
+        padding: 40px 10px 20px;
+
+        .skills-title {
+            top:-16px;
+            left:-1px;
+            font-size: 3em;
+            letter-spacing: -6px;
+        }
+
+        .skills-subtext-wpr .skills-subtext {
+            padding-top:5px;
+        }
+
     }
 }

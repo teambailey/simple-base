@@ -20,18 +20,28 @@ $(function() {
 
     document.getElementById("meun-slide-navigation").innerHTML = $fixedNavLinks
 
+
+    if (document.documentElement.clientWidth > 331) {
+        // scripts
+    }
+
     $('#bg-img1').each(function(){
         var $bgobj = $(this); // assigning the object
             $window = $(window);
 
         $(window).scroll(function() {
-            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+            var yPos = -(($window.scrollTop()) / $bgobj.data('speed'));
 
             // Put together our final background position
             var coords = '50% '+ yPos + 'px';
 
-            // Move the background
-            $bgobj.css({ backgroundPosition: coords });
+            // Prevent action from firing on mobile
+            if (document.documentElement.clientWidth > 570) {
+
+                // Move the background
+                $bgobj.css({ backgroundPosition: coords });
+            }
+
         });
     });
 
@@ -102,11 +112,15 @@ $(function() {
 
         $('#' + locationID + '-img').closest('.works-img-wpr').show();
 
-        $('.works-bg-mask').addClass('is-open');
-        $('body').addClass('overflow-hidden');
-        $('.fa-close').show();
+        if ($(this).hasClass('no-link')){
 
-        $('#works-scrollTarget').scrollView();
+            $('.works-bg-mask').addClass('is-open');
+            $('body').addClass('overflow-hidden');
+            $('.fa-close').show();
+
+            $('#works-scrollTarget').scrollView();
+        }
+
     });
 
     $('.works-bg-mask, .works-img, .fa-close').on('click', function(event) {
