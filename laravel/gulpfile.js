@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('sass', function () {
-    gulp.src('public/scss/style.scss')
+    gulp.src('resources/assets/scss/style.scss')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass())
     .pipe(plugins.autoprefixer('last 3 versions'))

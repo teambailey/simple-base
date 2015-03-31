@@ -4,13 +4,10 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<title>Andew Bailey - Front End Developer</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Lobster+Two|Molle:400italic|Bangers|Julius+Sans+One' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="http://www.andrewbailey.me/favicon.ico">
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/partials/app.js"></script>
 	</head>
 	<body>
 		<div class="container section-wpr dblue header intro-wpr">
@@ -21,17 +18,7 @@
 						<span>andrew bailey</span>
 						<span>front end developer | ux designer | cool dude</span>
 					</a>
-					<ul class="header-nav">
-						<li><a href="/#" class="scroll-stop" data-scroll="contact">CONTACT</a></li>
-						<li>.</li>
-						<li><a href="/#" class="scroll-stop" data-scroll="skills">SKILLS</a></li>
-						<li>.</li>
-						<li><a href="/#" class="scroll-stop" data-scroll="works">WORKS</a></li>
-						<li>.</li>
-						<li><a href="/#" class="scroll-stop" data-scroll="about">ABOUT</a></li>
-						<li>.</li>
-						<li><a href="/#" class="scroll-stop active" data-scroll="intro">INTRO</a></li>
-					</ul>
+					<ul class="header-nav" id="header-navigation"></ul>
 				</div>
 			</div>
 		</div>
@@ -49,38 +36,7 @@
 		<!-- /slide menu right -->
 		<div class="nav-bg-mask"></div>
 	    <nav class="menu">
-	        <ul class="meun-slide">
-	            <li>
-	            	<a href="#" class="meun-link menu-close">
-	            		<span class="menu-links-text menu-close-text">Close</span>
-	            	</a>
-	            </li>
-	            <li>
-	            	<a href="#" class="meun-link scroll-stop" data-scroll="intro">
-	            		<span class="menu-links-text">INTRO</span>
-	            	</a>
-	            </li>
-	            <li>
-	            	<a href="#" class="meun-link scroll-stop" data-scroll="about">
-	            		<span class="menu-links-text">ABOUT</span>
-	            	</a>
-	            </li>
-	            <li>
-	            	<a href="#" class="meun-link scroll-stop" data-scroll="works">
-	            		<span class="menu-links-text">WORKS</span>
-	            	</a>
-	            </li>
-	            <li>
-	            	<a href="#" class="meun-link scroll-stop" data-scroll="skills">
-	            		<span class="menu-links-text">SKILLS</span>
-	            	</a>
-	            </li>
-	            <li>
-	            	<a href="#" class="meun-link scroll-stop" data-scroll="contact">
-	            		<span class="menu-links-text">CONTACT</span>
-	            	</a>
-	            </li>
-	        </ul>
+	        <ul class="meun-slide" id="meun-slide-navigation"></ul>
 	    </nav>
 		<div class="container section-wpr pink">
 			<div class="hero-wpr">

@@ -1,0 +1,16 @@
+/* Normalize CSS */
+// @import "https://normalize-css.googlecode.com/svn/trunk/normalize.css";
+
+/* Bootstrap CSS */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css";
+
+/* Variables and Mixins */
+@import "partials/variables.scss";
+
+/* General Styles */
+@import "partials/global.scss";
+// @import "partials/login.scss";
+@import "partials/header.scss";
+// @import "partials/footer.scss";
+// @import "partials/overrides.scss";
+// @import "partials/dashboard.scss";

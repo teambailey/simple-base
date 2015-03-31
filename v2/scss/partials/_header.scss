@@ -27,9 +27,13 @@
             }
         }
 
-        &:nth-child(even) {
-            line-height: .9;
-            color:$grey;
+        // &:nth-child(even) {
+        //     line-height: .9;
+        //     color:$grey;
+        // }
+
+        &:first-of-type span {
+            display:none;
         }
     }
 }
