@@ -13,12 +13,15 @@ gulp.task('sass', function () {
     .pipe(plugins.livereload({start: true}));
 });
 
-gulp.task('javascript', function () {
-    gulp.src('js/partials/*.js')
+gulp.task('js', function () {
+    gulp.src(['js/partials/jquery-2.1.3.min.js', 'js/partials/app.js'])
+    .pipe(plugins.concat('all.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('js/all.js'));
+    .pipe(gulp.dest('js'))
+    .pipe(plugins.livereload({start: true}));
 });
 
-gulp.task('default', ['sass', 'javascript'], function (){
-    gulp.watch(['scss/**/*.scss', 'index.html', 'js/**/*.js'], ['sass']);
+gulp.task('default',['sass', 'js'], function (){
+    gulp.watch(['scss/**/*.scss', 'index.html'], ['sass']);
+    gulp.watch(['js/partials/*.js'], ['js']);
 });
