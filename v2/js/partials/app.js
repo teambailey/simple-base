@@ -2,23 +2,29 @@ $(function() {
 
     // Nav Links
     var $navLinks = "",
-        $navLinksItems = ["CONTACT", "SKILLS", "WORKS", "ABOUT", "INTRO"];
+        $navLinksItems = ["CONTACT", "SKILLS", "WORKS", "ABOUT", "INTRO"],
+        $navTarget = document.getElementById("header-navigation");
+
     for (i = 0; i < $navLinksItems.length; i++) {
         var $navLinksScrollStop = $navLinksItems[i].toLowerCase();
-        $navLinks += '<li><a href="#" class="scroll-stop" data-scroll="' + $navLinksScrollStop + '">' + $navLinksItems[i] + '</a><span style="padding-left:15px";>|</span></li>'
+
+        $navLinks += '<li><a href="#" class="scroll-stop" data-scroll="' + $navLinksScrollStop + '">' + $navLinksItems[i] + '</a><span style="padding-left:15px";>|</span></li>';
     }
 
-    document.getElementById("header-navigation").innerHTML = $navLinks;
+    $navTarget.innerHTML = $navLinks;
 
     // Fixed Nav Links
     var $fixedNavLinks = "",
-        $fixedNavLinksItems = ["INTRO", "ABOUT", "WORKS", "SKILLS", "CONTACT"];
+        $fixedNavLinksItems = ["INTRO", "ABOUT", "WORKS", "SKILLS", "CONTACT"],
+        $fixedNavTarget = document.getElementById("meun-slide-navigation");
+
     for (i = 0; i < $fixedNavLinksItems.length; i++) {
         var $fixedNavLinksScrollStop = $fixedNavLinksItems[i].toLowerCase();
-        $fixedNavLinks += '<li><a href="#" class="meun-link scroll-stop" data-scroll="' + $fixedNavLinksScrollStop + '"><span class="menu-links-text">' + $fixedNavLinksItems[i] + "</span></a></li>"
+
+        $fixedNavLinks += '<li><a href="#" class="meun-link scroll-stop" data-scroll="' + $fixedNavLinksScrollStop + '"><span class="menu-links-text">' + $fixedNavLinksItems[i] + "</span></a></li>";
     }
 
-    document.getElementById("meun-slide-navigation").innerHTML = $fixedNavLinks
+    $fixedNavTarget.innerHTML = $fixedNavLinks;
 
 
     if (document.documentElement.clientWidth > 331) {
@@ -185,6 +191,4 @@ $(function() {
         });
 
     });
-
-    // $('body').css('display', 'none');
 });
