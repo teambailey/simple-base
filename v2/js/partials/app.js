@@ -26,11 +26,6 @@ $(function() {
 
     $fixedNavTarget.innerHTML = $fixedNavLinks;
 
-
-    if (document.documentElement.clientWidth > 331) {
-        // scripts
-    }
-
     $('#bg-img1').each(function(){
         var $bgobj = $(this); // assigning the object
             $window = $(window);
