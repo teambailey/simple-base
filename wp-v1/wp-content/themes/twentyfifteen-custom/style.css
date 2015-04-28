@@ -1,0 +1,18 @@
+/*
+ Theme Name:     alb twentyfifteen Child Theme
+ Theme URI:      http://www.andrewbailey.me/wp-v1
+ Description:    twentyfifteen Child Theme
+ Author:         Andrew Bailey
+ Author URI:     http://www.andrewbailey.me
+ Template:       twentyfifteen
+ Version:        1.0.0
+*/
+
+@import url("../twentyfifteen/style.css");
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+.sidebar {
+    background-color: blue;
+}

@@ -1,0 +1,118 @@
+// Contact Section
+.contact-section {
+    position: relative;
+
+    .contact-title {
+        position: absolute;
+        left:-30px;
+        top: 17px;
+
+        opacity: .1;
+        font-size: 6.5em;
+        letter-spacing: -9px;
+    }
+
+    h2,
+    h3 {
+        color: $white;
+    }
+
+    h3 {
+        margin-bottom: 40px;
+    }
+
+    h4 {
+        color: $white;
+        font-size: 20px;
+    }
+
+    p {
+        color: $white;
+        font-weight: $normal;
+        margin-bottom: 36px;
+    }
+
+    span {
+        padding-left: 24px;
+        color:$white;
+        line-height: 26px;
+    }
+
+    .connection-wpr {
+        width:405px;
+        height: 366px;
+
+        a {
+            text-decoration: none;
+            font-size: 0;
+
+            img {
+                width:45%;
+                margin-top:0;
+                background-color:white;
+            }
+
+            &:hover span{
+                color: $light-sky-blue;
+            }
+        }
+    }
+}
+
+// Form Styling
+.form-group input,
+.form-group textarea {
+    background-color:$dark-pink;
+    border:1px solid transparent;
+    color:$text-pink;
+    font-size:$medium;
+    margin-top: 16px;
+
+    &:hover,
+    &:focus {
+        border-color:$white;
+    }
+}
+
+.form-group input {
+    padding:20px 12px;
+
+    &[type="submit"]{
+        width:100%;
+
+        &:hover {
+            color:$white;
+            border:1px solid $white;
+            background-color:transparent;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+// Placeholder Color
+.form-control::-webkit-input-placeholder {
+   color: $text-pink;
+   font-size: $small;
+   line-height: 21px;
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: $text-pink;
+   font-size: $small;
+   line-height: 21px;
+}
+
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: $text-pink;
+   font-size: $small;
+   line-height: 21px;
+}
+
+.form-control:-ms-input-placeholder {
+   color: $text-pink;
+   font-size: $small;
+   line-height: 21px;
+}
