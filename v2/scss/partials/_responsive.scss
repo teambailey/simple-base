@@ -125,7 +125,7 @@
 	}
 
 	nav .meun-slide li {
-		width: 100%;
+		width: 300px;
 
 		.meun-link{
 			padding: 24px 275px;
@@ -232,8 +232,10 @@
 		}
 
 		.connection-wpr {
-			width: 536px;
-			height: 595px;
+			// width: 536px;
+			width: 100%;
+			// height: 595px;
+			height: 100%;
 
 			h4 {
 				font-size: 27px;
