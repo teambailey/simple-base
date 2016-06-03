@@ -1,0 +1,44 @@
+// Fixed Header
+.section-wpr.fixed-header {
+    height:45px;
+    display: none;
+
+    img {
+        height: 30px;
+        border-right:4px double $white;
+        padding:4px 8px 0;
+
+        ~ span {
+            color:$white;
+        }
+    }
+
+    button.btn {
+        float:right;
+        margin-top:6px;
+        margin-right: 40px;
+        padding: 4px 32px;
+        background-color: transparent;
+        border: 1px solid $grey;
+        color:$grey;
+
+        &:hover {
+            border: 1px solid $white;
+            color:$white;
+        }
+    }
+
+    &.fixed {
+        z-index:9999;
+        position: fixed;
+        left:0;
+        top:0;
+        border-bottom: 3px solid $white;
+        display: block;
+
+        &.ie-sux {
+            display: none;
+        }
+    }
+
+}
