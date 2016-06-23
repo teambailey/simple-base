@@ -6,12 +6,9 @@ const sassLoaders = [
   'css-loader',
   'postcss-loader',
   // 'sass-loader?indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
-  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src')
+  'sass-loader'
 ]
 
-// sassLoader: {
-//   includePaths: [path.resolve(__dirname, "./some-folder")]
-// },
 
 const config = {
   entry: {
@@ -30,22 +27,26 @@ const config = {
       }
     ]
   },
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, './build'),
-    publicPath: '/build'
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src")],
+    outputStyle: 'nested'
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
   postcss: [
     autoprefixer({
       browsers: ['last 2 versions']
     })
   ],
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
   resolve: {
     extensions: ['', '.js', '.scss'],
     root: [path.join(__dirname, './src')]
+  },
+  output: {
+    filename: '[name].js',
+    path: path.join(__dirname, './build'),
+    publicPath: '/build'
   }
 }
 
