@@ -1,4 +1,7 @@
+@import 'stylesheets/config/colors';
+
 .footer {
+  background: $red;
   font-style: italic;
 
   span {

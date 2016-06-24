@@ -39,6 +39,9 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
-    "standard": "^7.0.0"
+    "browser-sync": "^2.13.0",
+    "browser-sync-webpack-plugin": "^1.0.3",
+    "standard": "^7.0.0",
+    "uglify-js": "^2.6.4"
   }
 }
