@@ -13,15 +13,11 @@
     "test": "standard && webpack --bail"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/bensmithett/webpack-css-example.git"
+    "type": "",
+    "url": ""
   },
   "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bensmithett/webpack-css-example/issues"
-  },
-  "homepage": "https://github.com/bensmithett/webpack-css-example",
+  "homepage": "",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.9.0",

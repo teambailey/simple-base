@@ -40,15 +40,24 @@ const config = {
     })
   ],
   plugins: [
+    // Not sure what you do yet.
+    // Think that you compile the Sass
+    // and act as the loader too
     new ExtractTextPlugin('[name].css'),
+    // Uglifies the final compiled
+    // build JS file. Its disabled b/c
+    // I still need to figure out the
+    // production build process
     // new webpack.optimize.UglifyJsPlugin({
     //   compress: {
     //       warnings: false
     //   }
     // }),
+    // Creates a development web server
+    // at localhost:3000. A proxy can be
+    // setup to unitilize the
+    // webpack server thingy
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./public directory is being served
       host: 'localhost',
       port: 3000,
       server: { baseDir: ['./'] }
@@ -63,6 +72,8 @@ const config = {
     path: path.join(__dirname, './build'),
     publicPath: '/build'
   },
+  // Prevents unnecessary stats
+  // that are outputed to the terminal
   stats: { children: false }
 }
 
