@@ -1,0 +1,32 @@
+@import 'stylesheets/config/rem';
+
+html {
+
+  @include rem-baseline(100%);
+
+  // Mobile devices (phones, 767px and down)
+  @media (max-width: 767px) {
+
+    @include rem-baseline(80%);
+
+  }
+
+  // Small devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+
+    @include rem-baseline(90%);
+
+  }
+  // Medium devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+
+    @include rem-baseline(100%);
+
+  }
+  // Large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+
+    @include rem-baseline(110%);
+
+  }
+}
