@@ -1,10 +1,16 @@
-@import 'stylesheets/config/variables';
+@import 'stylesheets/config/global';
+
+// .footer {
+//   background: $red;
+//   font-style: italic;
+//
+//   span {
+//     color: blue;
+//   }
+// }
+
 
 .footer {
-  background: $red;
-  font-style: italic;
-
-  span {
-    color: blue;
-  }
+  background-color: $red;
+  height: 1em;
 }

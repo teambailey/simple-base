@@ -1,3 +1,10 @@
+@import 'stylesheets/config/global';
+
 .menu {
   color: #fff;
+  background-color: blue;
+
+  a {
+    color: $white;
+  }
 }

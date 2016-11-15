@@ -7,7 +7,6 @@ const Footer = React.createClass({
     return (
       <div className='footer'>
         Footer
-        <span>Yup</span>
       </div>
     )
   }
