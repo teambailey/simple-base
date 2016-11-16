@@ -27,6 +27,11 @@ const config = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        // loader: 'file?name=[path][name].[hash].[ext]',
+        loader: 'file?name=[name].[ext]'
       }
     ]
   },
@@ -70,7 +75,7 @@ const config = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, './build'),
-    publicPath: '/build'
+    publicPath: '/build/'
   },
   // Prevents unnecessary stats
   // that are outputed to the terminal

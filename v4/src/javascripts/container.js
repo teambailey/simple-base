@@ -4,6 +4,7 @@ import MainContent from 'javascripts/main-content'
 import Footer from 'javascripts/footer'
 
 import 'stylesheets/modules/container'
+import 'javascripts/vendor/jquery-3.1.1.min.js'
 
 const Container = React.createClass({
   render () {

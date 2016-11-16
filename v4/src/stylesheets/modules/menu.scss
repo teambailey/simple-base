@@ -1,8 +1,17 @@
 @import 'stylesheets/config/global';
 
 .menu {
+  height: 100vh;
+  width: 5vw;
+  float: right;
+
   color: #fff;
   background-color: blue;
+  @include trans(width);
+
+  &.expand {
+    width: 25vw;
+  }
 
   a {
     color: $white;

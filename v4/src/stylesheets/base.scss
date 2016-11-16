@@ -2,9 +2,18 @@
 
 html {
   font-family: sans-serif;
+  // background-image: url('images/building.jpeg');
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+// ----------------------------------
+// Structure
+// ----------------------------------
+
+.full-width {
+  width: 100%;
 }
