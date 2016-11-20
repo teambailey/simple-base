@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJsPlugin = require('uglify-js')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path')
 
 
@@ -31,7 +32,7 @@ const config = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         // loader: 'file?name=[path][name].[hash].[ext]',
-        loader: 'file?name=[name].[ext]'
+        loader: '/images/file?name=[name].[ext]'
       }
     ]
   },
@@ -44,11 +45,33 @@ const config = {
       browsers: ['last 2 versions']
     })
   ],
+  context: path.join(__dirname, './'),
   plugins: [
     // Not sure what you do yet.
     // Think that you compile the Sass
     // and act as the loader too
     new ExtractTextPlugin('[name].css'),
+
+    new CopyWebpackPlugin([
+      // Copy directory contents to {output}/to/directory/
+      { from: 'src/images', to: 'images/' },
+
+      // Copy glob results to /absolute/path/
+      // { from: 'from/directory/**/*', to: '/absolute/path' },
+      ], {
+        ignore: [
+          // Doesn't copy any file, even if they start with a dot
+          // '**/*',
+          // Doesn't copy any file, except if they start with a dot
+          // { glob: '**/*', dot: false }
+        ],
+
+        // By default, we only copy modified files during
+        // a watch or webpack-dev-server build. Setting this
+        // to `true` copies all files.
+        // copyUnmodified: true
+    }),
+
     // Uglifies the final compiled
     // build JS file. Its disabled b/c
     // I still need to figure out the

@@ -4,12 +4,12 @@ import 'stylesheets/modules/main-content'
 import $ from 'javascripts/vendor/jquery-3.1.1.min.js'
 import Menu from 'javascripts/menu'
 
-const src = require('images/building.jpeg');
-console.log(src);
+// const src = require('build/images/building.jpeg');
+// console.log(src);
 
 // Use the image in your code somehow now
 const Profile = () => (
-  <img src={src} width="100%"/>
+  <img src='build/images/building.jpeg' width="100%"/>
 );
 
 const MainContent = React.createClass({
