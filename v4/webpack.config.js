@@ -31,10 +31,13 @@ const config = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        // loader: 'file?name=[path][name].[hash].[ext]',
         loader: '/images/file?name=[name].[ext]'
-      }
-    ]
+      },
+      { test: /\.svg$/, loader: 'file?limit=65000&mimetype=image/svg+xml&name=/fonts/[name].[ext]' },
+      { test: /\.woff$/, loader: 'file?limit=65000&mimetype=application/font-woff&name=/fonts/[name].[ext]' },
+      { test: /\.woff2$/, loader: 'file?limit=65000&mimetype=application/font-woff2&name=/fonts/[name].[ext]' },
+      { test: /\.[ot]tf$/, loader: 'file?limit=65000&mimetype=application/octet-stream&name=/fonts/[name].[ext]' },
+  ]
   },
   sassLoader: {
     includePaths: [path.resolve(__dirname, "./src")],

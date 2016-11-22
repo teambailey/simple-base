@@ -1,4 +1,24 @@
+@import 'stylesheets/config/global';
+
 .main-content {
-  background-color: green;
-  height: 50vh;
+  height: 150vh;
+  position: relative;
+  margin: 5em;
+  padding: 2.5em;
+  background-color:rgba(255, 84, 60, 0.5);
+}
+
+.button,
+.button_2,
+.button_3 {
+  padding: 8px 15px;
+}
+
+.button_2 {
+  background-color: $blue;
+  color: white;
+  @include trans(all);
+  &:hover {
+    background-color: $blue-dark;
+  }
 }

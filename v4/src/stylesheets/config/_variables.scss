@@ -1,2 +1,29 @@
-$red: #f000cc;
+$black: #000000;
 $white: #ffffff;
+
+// Base Colors
+// $blue: #4D9DE0;
+// $red: #E15554;
+// $yellow: #E1BC29;
+// $green: #3BB273;
+// $purple: #7768AE;
+
+$blue: rgba(102, 153, 204, 1);
+$yellow: rgba(255, 242, 117, 1);
+$orange: rgba(255, 140, 66, 1);
+$red: rgba(255, 60, 56, 1);
+$topaz: rgba(162, 62, 72, 1);
+
+// Inactive State colors:
+$blue-light: lighten($blue, 25%);
+$orange-light: lighten($orange, 25%);
+$yellow-light: lighten($yellow, 25%);
+$red-light: lighten($red, 25%);
+$topaz-light: lighten($topaz, 25%);
+
+// Hover/Active State colors
+$blue-dark: darken($blue, 25%);
+$orange-dark: darken($orange, 25%);
+$yellow-dark: darken($yellow, 25%);
+$red-dark: darken($red, 25%);
+$topaz-dark: darken($topaz, 25%);

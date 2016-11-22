@@ -1,6 +1,8 @@
 .container {
+  position: relative;
+
   color: #000;
-  // font-size: 16px;
+  font-weight: 300;
   ul {
     padding: 0;
     margin: 0;
@@ -17,4 +19,12 @@
       text-decoration: none;
     }
   }
+}
+
+.container_background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
 }

@@ -1,4 +1,8 @@
 @import 'stylesheets/config/type';
+@import 'stylesheets/vendor/waves';
+
+// Google Font
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400');
 
 html {
   font-family: sans-serif;
@@ -8,6 +12,16 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: audimatbold_italic;
+  font-size: 60px;
+}
+
+h2,
+p {
+  font-family: Ubuntu;
 }
 
 // ----------------------------------

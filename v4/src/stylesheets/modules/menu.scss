@@ -1,19 +1,28 @@
 @import 'stylesheets/config/global';
 
 .menu {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  // right: 0;
+
   height: 100vh;
-  width: 5vw;
+  width: 15vw;
+  min-width: 175px;
   float: right;
 
-  color: #fff;
-  background-color: blue;
+  color: $white;
+  background-color: $blue;
   @include trans(width);
 
   &.expand {
-    width: 25vw;
+    right: 0;
+    // width: 25vw;
   }
 
   a {
+    display: inline-block;
     color: $white;
+    padding: .75em 1em;
   }
 }
