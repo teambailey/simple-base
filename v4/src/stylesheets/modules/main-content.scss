@@ -41,10 +41,15 @@
 
 .block {
   display: flex;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
 }
 
 .block__content {
   padding: 0 .25em;
+  // background-image: url('images/placeholder1.jpeg');
 }
 
 .block__content-full {

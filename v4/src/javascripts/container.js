@@ -10,7 +10,7 @@ const Container = React.createClass({
   render () {
     return (
       <div className="container">
-        <img className="container_background-image" src="build/images/building.jpeg" width="100%"/>
+        <img className="container_background-image" src="public/images/building.jpeg" width="100%"/>
         <Header />
         <MainContent />
         <Footer />

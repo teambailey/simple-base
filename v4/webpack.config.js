@@ -18,6 +18,11 @@ const config = {
   entry: {
     app: ['./src/index']
   },
+  output: {
+    filename: '[name].js',
+    path: path.join(__dirname, './public'),
+    publicPath: './'
+  },
   module: {
     loaders: [
       {
@@ -31,7 +36,7 @@ const config = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: '/images/file?name=[name].[ext]'
+        loader: '/images/url-loader?name=[name].[ext]'
       },
       { test: /\.svg$/, loader: 'file?limit=65000&mimetype=image/svg+xml&name=/fonts/[name].[ext]' },
       { test: /\.woff$/, loader: 'file?limit=65000&mimetype=application/font-woff&name=/fonts/[name].[ext]' },
@@ -97,11 +102,6 @@ const config = {
   resolve: {
     extensions: ['', '.js', '.scss'],
     root: [path.join(__dirname, './src')]
-  },
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, './build'),
-    publicPath: '/build/'
   },
   // Prevents unnecessary stats
   // that are outputed to the terminal

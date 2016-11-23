@@ -49,6 +49,27 @@ const MainContent = React.createClass({
           </div>
         </div>
 
+        <div className="block">
+          <div className="block__content block__content-half">
+            <div className="content__section content__section-upper">
+              <h3>This is the Title</h3>
+            </div>
+            <div className="content__section content__section-lower">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" className="button">Click Here</a>
+            </div>
+          </div>
+          <div className="block__content block__content-half">
+            <div className="content__section content__section-upper">
+              <h3>This is the Title</h3>
+            </div>
+            <div className="content__section content__section-lower">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" className="button">Click Here</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }
