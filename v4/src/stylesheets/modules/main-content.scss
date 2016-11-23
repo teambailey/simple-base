@@ -3,22 +3,112 @@
 .main-content {
   height: 150vh;
   position: relative;
+  border-radius: 2px;
   margin: 5em;
   padding: 2.5em;
-  background-color:rgba(255, 84, 60, 0.5);
+  // background-color:rgba(255, 84, 60, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.button,
-.button_2,
-.button_3 {
-  padding: 8px 15px;
-}
-
-.button_2 {
+.button {
+  padding: .75em 2em;
+  color: $white;
   background-color: $blue;
-  color: white;
+  border-radius: 2px;
+  text-decoration: none;
   @include trans(all);
+
   &:hover {
     background-color: $blue-dark;
   }
 }
+
+.tempName {
+  // margin-bottom: 2.5em;
+}
+
+.tempName2 {
+  border-radius: 2px;
+  padding: 1.5em 1em;
+  margin: 0 .25em;
+  margin-bottom: 1.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+// ----------------------------------
+// @TODO LABEL THIS AREA
+// ----------------------------------
+
+.block {
+  display: flex;
+}
+
+.block__content {
+  padding: 0 .25em;
+}
+
+.block__content-full {
+  flex: 1 1 100%;
+	flex-flow: row wrap;
+}
+
+.block__content-half {
+  flex: 1 1 50%;
+	flex-flow: row wrap;
+}
+
+.block__content-third {
+  flex: 1 1 33.33333%;
+	flex-flow: row wrap;
+}
+
+.block__content-fourth {
+  flex: 1 1 25%;
+	flex-flow: row wrap;
+}
+
+.content__section {
+  padding: 1.5em 1em;
+
+  h3,
+  p,
+  span {
+    // color: $white;
+  }
+
+  .button {
+    margin-top: 1.5em;
+  }
+}
+
+.content__section-upper {
+  border-radius: 2px 2px 0 0;
+
+  h3 {
+    text-align: right;
+  }
+}
+.content__section-lower {
+  border-radius: 0 0 2px 2px;
+  // text-align: center;
+
+  p {
+    // text-align: left;
+  }
+}
+
+.content__section-upper,
+.content__section-lower {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+

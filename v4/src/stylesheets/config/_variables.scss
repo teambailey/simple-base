@@ -1,5 +1,7 @@
-$black: #000000;
 $white: #ffffff;
+$grey-light: #545454;
+$grey: #222;
+$black: #000000;
 
 // Base Colors
 // $blue: #4D9DE0;
@@ -8,22 +10,28 @@ $white: #ffffff;
 // $green: #3BB273;
 // $purple: #7768AE;
 
-$blue: rgba(102, 153, 204, 1);
-$yellow: rgba(255, 242, 117, 1);
-$orange: rgba(255, 140, 66, 1);
-$red: rgba(255, 60, 56, 1);
-$topaz: rgba(162, 62, 72, 1);
+// $blue: rgba(102, 153, 204, 1);
+// $yellow: rgba(255, 242, 117, 1);
+// $orange: rgba(255, 140, 66, 1);
+// $red: rgba(255, 60, 56, 1);
+// $topaz: rgba(162, 62, 72, 1);
+
+$blue: rgba(2, 176, 226, 1);
+$yellow: rgba(244, 221, 5, 1);
+$orange: rgba(254, 86, 59, 1);
+$pale: rgba(204, 219, 224, 1);
+$green: rgba(59, 178, 115, 1);
 
 // Inactive State colors:
-$blue-light: lighten($blue, 25%);
-$orange-light: lighten($orange, 25%);
-$yellow-light: lighten($yellow, 25%);
-$red-light: lighten($red, 25%);
-$topaz-light: lighten($topaz, 25%);
+$blue-light: lighten($blue, 20%);
+$orange-light: lighten($orange, 20%);
+$yellow-light: lighten($yellow, 20%);
+$pale-light: lighten($pale, 20%);
+$green-light: lighten($green, 20%);
 
 // Hover/Active State colors
-$blue-dark: darken($blue, 25%);
-$orange-dark: darken($orange, 25%);
-$yellow-dark: darken($yellow, 25%);
-$red-dark: darken($red, 25%);
-$topaz-dark: darken($topaz, 25%);
+$blue-dark: darken($blue, 15%);
+$orange-dark: darken($orange, 15%);
+$yellow-dark: darken($yellow, 15%);
+$pale-dark: darken($pale, 15%);
+$green-dark: darken($green, 15%);

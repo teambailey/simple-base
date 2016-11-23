@@ -10,24 +10,44 @@ const MainContent = React.createClass({
     return (
       <div className="main-content">
 
-        <a href="#" className="button">Click Here</a>
-        <br/>
-        <a href="#" className="button_2">Click Here</a>
-        <br/>
-        <a href="#" className="button_3">Click Here</a>
-
         <h1>Andrew Bailey</h1>
-        <h2>frontEndDev</h2>
-        <p>This paragraph text. Its super great!</p>
+
+        <div className="tempName2">
+          <h2>frontEndDev</h2>
+          <p className="tempName">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
 
         <Menu />
 
-        {/* <div className="block">
-          <div className="block__content">
-            <div className="content__section content__section-upper"></div>
-            <div className="content__section content__section-lower"></div>
+        <div className="block">
+          <div className="block__content block__content-third">
+            <div className="content__section content__section-upper">
+              <h3>This is the Title</h3>
+            </div>
+            <div className="content__section content__section-lower">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" className="button">Click Here</a>
+            </div>
           </div>
-        </div> */}
+          <div className="block__content block__content-third">
+            <div className="content__section content__section-upper">
+              <h3>This is the Title</h3>
+            </div>
+            <div className="content__section content__section-lower">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" className="button">Click Here</a>
+            </div>
+          </div>
+          <div className="block__content block__content-third">
+            <div className="content__section content__section-upper">
+              <h3>This is the Title</h3>
+            </div>
+            <div className="content__section content__section-lower">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" className="button">Click Here</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     )
@@ -53,22 +73,20 @@ $(function(){
     delay: 200
   };
 
-  Waves.attach('.button', ['waves-float']);
-  Waves.attach('.button_2', ['waves-light']);
-  Waves.attach('.button_3', ['waves-float']);
+  Waves.attach('.button', ['waves-float', 'waves-light']);
 
-  function doit() {
-    var options = {
-        wait: null, //ms
-        position: { // This position relative to HTML element.
-            x: 0, //px
-            y: 50  //px
-        }
-    };
-    Waves.ripple('.button', options);
-  }
+  // function doit() {
+  //   var options = {
+  //       wait: null, //ms
+  //       position: { // This position relative to HTML element.
+  //           x: 0, //px
+  //           y: 50  //px
+  //       }
+  //   };
+  //   Waves.ripple('.button', options);
+  // }
 
-  window.setInterval(doit, 500);
+  // window.setInterval(doit, 500);
 
   Waves.init(config);
 });
