@@ -1,7 +1,3 @@
-
-/* Bootstrap */
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css";
-
 /* Font Awesome */
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 
@@ -9,23 +5,26 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Lobster+Two|Molle:400italic|Bangers|Julius+Sans+One);
 
 /* Variables and Mixins */
-@import "partials/variables.scss";
+@import "partials/variables";
 
 /* General Styles */
-@import "partials/global.scss";
-@import "partials/sprites.scss";
-@import "partials/header.scss";
-@import "partials/fixed-header.scss";
-@import "partials/intro.scss";
-@import "partials/about.scss";
-@import "partials/works.scss";
-@import "partials/skills.scss";
-@import "partials/contact.scss";
-@import "partials/footer.scss";
-@import "partials/fixed-slide-right-menu.scss";
-@import "partials/overrides.scss";
-@import "partials/responsive.scss";
+@import "partials/global";
+// @import "partials/sprites";
+// @import "partials/header";
+// @import "partials/fixed-header";
+// @import "partials/intro";
+// @import "partials/about";
+// @import "partials/works";
+// @import "partials/skills";
+// @import "partials/contact";
+// @import "partials/footer";
+// @import "partials/fixed-slide-right-menu";
+// @import "partials/overrides";
+// @import "partials/responsive";
 
 // Helper Classes
-@import "partials/helpers.scss";
+@import "partials/helpers";
+
+// Update2016
+@import "partials/update2016";
 

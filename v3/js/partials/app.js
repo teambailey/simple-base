@@ -1,34 +1,34 @@
 $(function() {
 
-  // Nav Links
-  $.getJSON('js/nav-items.json', function(json) {
-    var $navLinks = "",
-      $navLinksItems = json,
-      $navTarget = document.getElementById("header-navigation");
-
-    for (i = 0; i < $navLinksItems.length; i++) {
-      var $navLinksScrollStop = $navLinksItems[i].toLowerCase();
-
-      $navLinks += '<li><a href="#" class="scroll-stop" data-scroll="' + $navLinksScrollStop + '">' + $navLinksItems[i] + '</a><span style="padding-left:15px";>|</span></li>';
-    }
-
-    $navTarget.innerHTML = $navLinks;
-  });
-
-  // Fixed Nav Links
-  $.getJSON('js/fix-nav-items.json', function(json) {
-    var $fixedNavLinks = "",
-        $fixedNavLinksItems = json,
-        $fixedNavTarget = document.getElementById("meun-slide-navigation");
-
-    for (i = 0; i < $fixedNavLinksItems.length; i++) {
-      var $fixedNavLinksScrollStop = $fixedNavLinksItems[i].toLowerCase();
-
-      $fixedNavLinks += '<li><a href="#" class="meun-link scroll-stop" data-scroll="' + $fixedNavLinksScrollStop + '"><span class="menu-links-text">' + $fixedNavLinksItems[i] + "</span></a></li>";
-    }
-
-    $fixedNavTarget.innerHTML = $fixedNavLinks;
-  });
+  // // Nav Links
+  // $.getJSON('js/nav-items.json', function(json) {
+  //   var $navLinks = "",
+  //     $navLinksItems = json,
+  //     $navTarget = document.getElementById("header-navigation");
+  //
+  //   for (i = 0; i < $navLinksItems.length; i++) {
+  //     var $navLinksScrollStop = $navLinksItems[i].toLowerCase();
+  //
+  //     $navLinks += '<li><a href="#" class="scroll-stop" data-scroll="' + $navLinksScrollStop + '">' + $navLinksItems[i] + '</a><span style="padding-left:15px";>|</span></li>';
+  //   }
+  //
+  //   $navTarget.innerHTML = $navLinks;
+  // });
+  //
+  // // Fixed Nav Links
+  // $.getJSON('js/fix-nav-items.json', function(json) {
+  //   var $fixedNavLinks = "",
+  //       $fixedNavLinksItems = json,
+  //       $fixedNavTarget = document.getElementById("meun-slide-navigation");
+  //
+  //   for (i = 0; i < $fixedNavLinksItems.length; i++) {
+  //     var $fixedNavLinksScrollStop = $fixedNavLinksItems[i].toLowerCase();
+  //
+  //     $fixedNavLinks += '<li><a href="#" class="meun-link scroll-stop" data-scroll="' + $fixedNavLinksScrollStop + '"><span class="menu-links-text">' + $fixedNavLinksItems[i] + "</span></a></li>";
+  //   }
+  //
+  //   $fixedNavTarget.innerHTML = $fixedNavLinks;
+  // });
 
 
   $('#bg-img1').each(function(){

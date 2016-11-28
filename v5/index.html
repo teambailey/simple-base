@@ -1,0 +1,196 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ABailey | FrontEndDev</title>
+  <meta name="description" content="Super Fun Stuff">
+  <meta name="author" content="AndrewBailey">
+
+  <link rel="stylesheet" href="css/main.css?v=1.0">
+  <script src="js/vendor/vue.js" charset="utf-8"></script>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div id="app" v-cloak>
+    {{ message }}
+  </div>
+
+  <div id="app-2" v-cloak>
+    <!-- <span v-bind:title="message" v-if="seen"> -->
+    <span :title="message" v-if="seen">
+      Hover your mouse over me for a few seconds to see my dynamically bound title!
+      {{ message2 }}
+      <ol>
+        <!-- <li v-for="todo in todos" v-on:click="reverseMessage"> -->
+        <li v-for="todo in todos" @:click="reverseMessage">
+          <!-- {{ todo.text }} -->
+          {{todo.text.split('').reverse().join('')}}
+        </li>
+      </ol>
+      <input v-model="message2">
+      <first-test></first-test>
+    </span>
+  </div>
+
+  <div id="app3" v-cloak>
+    <alb-test v-for="thing in things" :yup="thing"></alb-test>
+  </div>
+
+  <div id="app4" v-cloak>
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  </div>
+
+  <div id="app5" v-cloak>
+    <p>Reversed Message: {{ reverseMessage() }}</p>
+  </div>
+
+  <div id="demo" v-cloak>{{ fullName }}</div>
+
+  <div id="app6" v-cloak>{{ fullName }}</div>
+
+  <div id="watch-example" v-cloak>
+    <p style="color: #fe563b">
+      Ask a Yes or No question
+      <br>
+      <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+  </div>
+
+  <div id="app7" v-cloak>
+    <template v-if="ok">
+      <p>yup 1</p>
+    </template>
+    <!-- <template v-if="nope">
+      <p>yup 2</p>
+    </template> -->
+    <template v-else>
+      <p>yup 3</p>
+    </template>
+  </div>
+
+  <div class="example1" v-cloak>
+    <ul>
+      <li v-for="(item,index) in items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="(item2,index) in items2">
+        {{ parentMessage }} - {{ index }} - {{ item2.message2 }}
+      </li>
+    </ul>
+    <ul>
+      <template v-for="item in items">
+        <li>{{ item.message }}</li>
+        <li class="divider">--- --- ---</li>
+      </template>
+    </ul>
+  </div>
+
+  <ul id="repeat-object" class="demo" v-cloak>
+    <li v-for="something in whatever">
+      {{ something }}
+    </li>
+    <br>
+    <span v-for="n in 10">{{ n }}</span>
+  </ul>
+
+  <div id="todo-list-example" v-cloak>
+    <input
+      v-model="newTodoText"
+      v-on:keyup.enter="addNewTodo"
+      placeholder="Add a todo"
+    >
+    <ul>
+      <li
+        is="todo-item"
+        v-for="(todo, index) in todos"
+        v-bind:title="todo"
+        v-on:remove="todos.splice(index, 1)"
+      ></li>
+    </ul>
+  </div>
+
+  <div id="example3" v-cloak>
+    <component v-bind:is="currentView">
+      <!-- component changes when vm.currentView changes! -->
+    </component>
+  </div>
+
+  <div id="app8" v-cloak>
+    <async-example></async-example>
+  </div>
+
+<!-- Since there is already a rich ecosystem of ajax libraries    -->
+<!-- and collections of general-purpose utility methods, Vue core -->
+<!-- is able to remain small by not reinventing them. This also   -->
+<!-- gives you the freedom to just use what you're familiar with. -->
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script>
+var watchExampleVM = new Vue({
+  el: '#watch-example',
+  data: {
+    question: '',
+    answer: 'I cannot give you an answer until you ask a question!'
+  },
+  watch: {
+    // whenever question changes, this function will run
+    question: function (newQuestion) {
+      this.answer = 'Waiting for you to stop typing...'
+      this.getAnswer()
+    }
+  },
+  methods: {
+    // _.debounce is a function provided by lodash to limit how
+    // often a particularly expensive operation can be run.
+    // In this case, we want to limit how often we access
+    // yesno.wtf/api, waiting until the user has completely
+    // finished typing before making the ajax request. To learn
+    // more about the _.debounce function (and its cousin
+    // _.throttle), visit: https://lodash.com/docs#debounce
+    getAnswer: _.debounce(
+      function () {
+        var vm = this
+        if (this.question.indexOf('?') === -1) {
+          vm.answer = 'Questions usually contain a question mark. ;-)'
+          return
+        }
+        vm.answer = 'Thinking...'
+        axios.get('https://yesno.wtf/api')
+          .then(function (response) {
+            vm.answer = _.capitalize(response.data.answer)
+          })
+          .catch(function (error) {
+            vm.answer = 'Error! Could not reach the API. ' + error
+          })
+      },
+      // This is the number of milliseconds we wait for the
+      // user to stop typing.
+      500
+    )
+  }
+})
+</script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

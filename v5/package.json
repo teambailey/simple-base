@@ -1,0 +1,14 @@
+{
+  "name": "v5",
+  "version": "1.0.0",
+  "description": "Site built using the Vue.js framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bailey",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^2.1.0"
+  }
+}

@@ -9,6 +9,11 @@ html body {
     }
 }
 
+h1 {
+  // color: green;
+  // font-size: 20px;
+}
+
 h2 {
     font-size: $big;
     font-weight: $extra-bold;
@@ -40,39 +45,39 @@ span {
     color: $grey;
 }
 
-// Logo
-.logo {
-    display:inline-block;
-    font-size:$large;
-    font-weight:$bold;
-    font-family:'Lato';
-    color: $white;
-    margin-left:34px;
-
-    img {
-        border-right:4px double $white;
-        padding:4px 8px 0;
-        margin-bottom: 8px;
-
-        ~ span {
-
-            ~ span {
-                display: block;
-                font-size: $small;
-                color:$white;
-                margin-top:-5px;
-            }
-        }
-    }
-
-    &:hover {
-        color:$white;
-    }
-
-    span {
-        color: $pink;
-    }
-}
+// // Logo
+// .logo {
+//     display:inline-block;
+//     font-size:$large;
+//     font-weight:$bold;
+//     font-family:'Lato';
+//     color: $white;
+//     margin-left:34px;
+//
+//     img {
+//         border-right:4px double $white;
+//         padding:4px 8px 0;
+//         margin-bottom: 8px;
+//
+//         ~ span {
+//
+//             ~ span {
+//                 display: block;
+//                 font-size: $small;
+//                 color:$white;
+//                 margin-top:-5px;
+//             }
+//         }
+//     }
+//
+//     &:hover {
+//         color:$white;
+//     }
+//
+//     span {
+//         color: $pink;
+//     }
+// }
 
 // Background Wrappers
 .section-wpr {

@@ -2,16 +2,40 @@
 $white: #fff;
 $black: #000;
 
-$dblue: #303441;
-$light-dblue: #373b49;
-$pink: #e95258;
-$light-pink: #e8686d;
+// $dblue: #303441;
+// $light-dblue: #373b49;
+// $pink: #e95258;
+// $light-pink: #e8686d;
 $grey: #666d88;
-$off-white: #f2f2f2;
-$dark-pink: #c8464c;
-$text-pink: #f48c8f;
-$light-sky-blue:#7dd4f9;
+// $off-white: #f2f2f2;
+// $dark-pink: #c8464c;
+// $text-pink: #f48c8f;
+// $light-sky-blue:#7dd4f9;
 
+$dblue: rgba(1, 22, 39, 1);
+$light-dblue: lighten($dblue, 10%);
+
+$pink: rgba(231, 29, 54, 1);
+$light-pink: lighten($pink, 10%);
+
+$off-white: rgba(253, 255, 252, 1);
+
+$teal: rgba(46, 196, 182, 1);
+$teal-light: lighten($teal, 20%);
+
+$gold: rgba(255, 159, 28, 1);
+$gold-light: lighten($gold, 10%);
+
+
+
+/* Coolors Exported Palette - coolors.co/011627-fdfffc-2ec4b6-e71d36-ff9f1c */
+
+/* RGB */
+$color1: rgba(1, 22, 39, 1);
+$color2: rgba(253, 255, 252, 1);
+$color3: rgba(46, 196, 182, 1);
+$color4: rgba(231, 29, 54, 1);
+$color5: rgba(255, 159, 28, 1);
 
 // Font Sizes
 $small: 	12px;
