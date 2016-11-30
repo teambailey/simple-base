@@ -1,6 +1,5 @@
 var gulp        = require('gulp');
 var plugins     = require('gulp-load-plugins')();
-var pump        = require('pump');
 var uglify      = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
@@ -35,26 +34,31 @@ gulp.task('js', function () {
   .pipe(reload({stream: true}));
 });
 
-gulp.task('copyIndex', function() {
+gulp.task('copy:index', function() {
   gulp.src('src/index.html')
   .pipe(gulp.dest('build'))
   .pipe(reload({stream: true}));
 });
 
-gulp.task('build', ['copyIndex', 'sass', 'js'], function(cb) {
+gulp.task('copy:images', function() {
+  gulp.src('src/imgs/*')
+  .pipe(gulp.dest('build/imgs'));
+});
+
+gulp.task('build:dev', ['copy:index', 'sass', 'js'], function(cb) {
   cb();
 });
 
-gulp.task('default',['build', 'serve'], function (){
+gulp.task('default',['build:dev', 'serve'], function (){
     gulp.watch(['src/scss/**/*.scss'], ['sass']);
-    gulp.watch('src/index.html', ['copyIndex']);
+    gulp.watch('src/index.html', ['copy:index']);
     gulp.watch(['src/js/*.js'], ['js']);
 });
 
 // -----------------------------
 //--- Production Build Tasks ---
 // -----------------------------
-gulp.task('sass-prod', function(cb) {
+gulp.task('sass:prod', function(cb) {
   gulp.src('src/scss/styles.scss')
   .pipe(plugins.sass().on('error', plugins.sass.logError))
   .pipe(plugins.autoprefixer('last 3 versions'))
@@ -65,7 +69,7 @@ gulp.task('sass-prod', function(cb) {
   });
 });
 
-gulp.task('js-prod', function (cb) {
+gulp.task('js:prod', function (cb) {
   gulp.src('src/js/app.js')
   .pipe(plugins.uglify())
   .pipe(gulp.dest('prod/js'))
@@ -74,7 +78,7 @@ gulp.task('js-prod', function (cb) {
   });
 });
 
-gulp.task('copyIndex-prod', function(cb) {
+gulp.task('copyIndex:prod', function(cb) {
   gulp.src('src/index.html')
   .pipe(gulp.dest('prod'))
   .on('finish', function() {
@@ -82,7 +86,7 @@ gulp.task('copyIndex-prod', function(cb) {
   });
 });
 
-gulp.task('build-prod', ['copyIndex-prod', 'sass-prod', 'js-prod'], function(cb) {
+gulp.task('build:prod', ['copyIndex:prod', 'sass:prod', 'js:prod'], function(cb) {
   cb();
 });
 
