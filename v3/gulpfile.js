@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var plugins     = require('gulp-load-plugins')();
 var uglify      = require('gulp-uglify');
+var del         = require('del');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
@@ -11,6 +12,10 @@ gulp.task('serve', function() {
             baseDir: "./build"
         }
     });
+});
+
+gulp.task('clean', function() {
+  del(['build'])
 });
 
 // ------------------------------
@@ -45,7 +50,7 @@ gulp.task('copy:images', function() {
   .pipe(gulp.dest('build/imgs'));
 });
 
-gulp.task('build:dev', ['copy:index', 'sass', 'js'], function(cb) {
+gulp.task('build:dev', ['clean', 'copy:index', 'copy:images','sass', 'js'], function(cb) {
   cb();
 });
 
