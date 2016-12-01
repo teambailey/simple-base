@@ -6,6 +6,8 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
+var buildDir = './build';
+
 // Static server
 gulp.task('serve', function() {
     browserSync.init({
@@ -16,7 +18,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('build:clean', function() {
-  del(['build'])
+  del([buildDir])
 });
 
 // ------------------------------
@@ -29,51 +31,45 @@ gulp.task('build:sass', function () {
     .pipe(plugins.autoprefixer('last 3 versions'))
     .pipe(plugins.cleanCss())
     .pipe(plugins.sourcemaps.write('.'))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest(buildDir + '/css'))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('build:js', function () {
   gulp.src('src/js/app.js')
   .pipe(plugins.uglify())
-  .pipe(gulp.dest('build/js'))
+  .pipe(gulp.dest(buildDir + '/js'))
   .pipe(reload({stream: true}));
 });
 
 gulp.task('copy:index', function() {
   gulp.src('src/index.html')
-  .pipe(gulp.dest('build'))
+  .pipe(gulp.dest(buildDir))
   .pipe(reload({stream: true}));
 });
 
 gulp.task('copy:images', function() {
   gulp.src('src/imgs/*')
-  .pipe(gulp.dest('build/imgs'));
+  .pipe(gulp.dest(buildDir + '/imgs'))
+  .pipe(reload({stream: true}));
 });
-
-// gulp.task('build:dev', function(callback) {
-//   runSequence('build:clean',
-//               'copy:index',
-//               'copy:images'
-//               ['build:sass', 'build:js'],
-//               callback);
-// });
 
 gulp.task('build:dev', function(callback) {
   runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], callback);
 });
 
 gulp.task('default',['build:dev', 'serve'], function (){
-    gulp.watch(['src/scss/**/*.scss'], ['sass']);
+    gulp.watch(['src/scss/**/*.scss'], ['build:sass']);
     gulp.watch('src/index.html', ['copy:index']);
-    gulp.watch(['src/js/*.js'], ['js']);
+    gulp.watch('src/imgs/*', ['copy:images']);
+    gulp.watch(['src/js/*.js'], ['build:js']);
 });
 
 // -----------------------------
 //--- Production Build Tasks ---
 // -----------------------------
 gulp.task('prod:usemin', function(cb) {
-  gulp.src('build/index.html')
+  gulp.src(buildDir + '/index.html')
   .pipe(plugins.usemin({
     css: [ plugins.rev() ],
     js: [ plugins.rev() ]
@@ -84,12 +80,16 @@ gulp.task('prod:usemin', function(cb) {
   });
 });
 
+// This only works if the build dir is
+// in a fully launchable state (that sux).
+// But check it out. The css and js files are
+// cache busted
 gulp.task('build:prod', function(callback) {
   runSequence('build:dev', 'prod:usemin', callback);
 });
 
 // gulp.task('sass:prod', function(cb) {
-//   gulp.src('build/css/styles.css')
+//   gulp.src(buildDir + '/css/styles.css')
 //   .pipe(gulp.dest('prod/css'))
 //   .on('finish', function(){
 //     cb();
@@ -97,7 +97,7 @@ gulp.task('build:prod', function(callback) {
 // });
 //
 // gulp.task('js:prod', function (cb) {
-//   gulp.src('build/js/app.js')
+//   gulp.src(buildDir + '/js/app.js')
 //   .pipe(gulp.dest('prod/js'))
 //   .on('finish', function() {
 //     cb();
@@ -105,7 +105,7 @@ gulp.task('build:prod', function(callback) {
 // });
 //
 // gulp.task('copyIndex:prod', function(cb) {
-//   gulp.src('build/index.html')
+//   gulp.src(buildDir + '/index.html')
 //   .pipe(gulp.dest('prod'))
 //   .on('finish', function() {
 //     cb();
