@@ -71,13 +71,18 @@ gulp.task('copy:images', function(cb) {
 });
 
 // The Build - fully sequenced tasks will perform
-// a development build and browserSync will startup
+// a development build
 gulp.task('build:dev', function(callback) {
-  runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], 'serve', callback);
+  runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], callback);
+});
+
+// Startup browserSync
+gulp.task('browserSync', function(callback) {
+  runSequence('build:dev', 'serve', callback)
 });
 
 // The Default - Dev Build and Watchers. #friendsForever
-gulp.task('default',['build:dev'], function (){
+gulp.task('default',['browserSync'], function () {
     gulp.watch(devDir + '/scss/**/*.scss', ['build:sass']);
     gulp.watch(devDir + '/index.html', ['copy:index']);
     gulp.watch(devDir + '/imgs/*', ['copy:images']);
@@ -112,8 +117,8 @@ gulp.task('prod:usemin', function(cb) {
 // That sux.
 // But check it out. The css and js files are
 // cache busted
-gulp.task('build:prod', function(callback) {
-  runSequence('build:dev', 'prod:usemin', callback);
+gulp.task('build:prod', ['prod:usemin'], function(cb) {
+  cb();
 });
 
 
