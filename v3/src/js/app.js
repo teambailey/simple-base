@@ -1,5 +1,5 @@
 $(function() {
-
+console.log("yup");
   // // Nav Links
   // $.getJSON('js/nav-items.json', function(json) {
   //   var $navLinks = "",

@@ -15,8 +15,11 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-load-plugins": "^1.4.0",
+    "gulp-rev": "^7.1.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "gulp-usemin": "^0.3.26",
+    "run-sequence": "^1.2.2"
   }
 }
