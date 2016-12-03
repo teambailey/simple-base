@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {someName} !== someName
 var del         = require('del');
+var fse         = require('fs-extra');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
@@ -8,6 +9,7 @@ var reload      = browserSync.reload;
 // The Dir's
 var devDir   = 'src' // adding "./" to the directory broke the watcher for the "imgs" folder
 var buildDir = 'build';
+var prodDir  = 'prod';
 
 // -------------------------------
 // --- Global Tasks ---
@@ -16,6 +18,10 @@ var buildDir = 'build';
 // Delete/Clean - Out with the Old
 gulp.task('build:clean', function() {
   del([buildDir])
+});
+
+gulp.task('prod:clean', function() {
+  del([prodDir])
 });
 
 
@@ -72,13 +78,13 @@ gulp.task('copy:images', function(cb) {
 
 // The Build - fully sequenced tasks will perform
 // a development build
-gulp.task('build:dev', function(callback) {
-  runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], callback);
+gulp.task('build:dev', function(cb) {
+  runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], cb);
 });
 
 // Startup browserSync
-gulp.task('browserSync', function(callback) {
-  runSequence('build:dev', 'serve', callback)
+gulp.task('browserSync', function(cb) {
+  runSequence('build:dev', 'serve', cb)
 });
 
 // The Default - Dev Build and Watchers. #friendsForever
@@ -105,7 +111,7 @@ gulp.task('prod:usemin', function(cb) {
     css: [ plugins.rev() ],
     js: [ plugins.rev() ]
   }))
-  .pipe(gulp.dest('prod'))
+  .pipe(gulp.dest(prodDir))
   .on('finish', function() {
     cb();
   });
@@ -117,7 +123,7 @@ gulp.task('prod:usemin', function(cb) {
 // That sux.
 // But check it out. The css and js files are
 // cache busted
-gulp.task('build:prod', ['prod:usemin'], function(cb) {
+gulp.task('build:prod', ['prod:clean', 'prod:usemin'], function(cb) {
   cb();
 });
 
