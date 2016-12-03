@@ -11,6 +11,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.2",
     "del": "^2.2.2",
+    "fs-extra": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
