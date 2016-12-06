@@ -12,6 +12,30 @@ var buildDir = 'build';
 var prodDir  = 'prod';
 
 // -------------------------------
+// --- Construct Tasks ---
+// -------------------------------
+var srcTemp = 'src_temp'; // tempDir for testing of construct task
+// Construct Paths
+var imagesDir    = srcTemp + '/imgs';
+var jsDirFile    = srcTemp + '/js/app.js';
+var sassDir      = srcTemp + '/scss';
+var sassStyles   = sassDir + '/styles.scss';
+var sassPartials = sassDir + '/partials';
+var sassGlobal   = sassPartials + '/_global.scss'
+var indexFile    = srcTemp + '/index.html';
+
+// This set of construct methods
+// builds the basic directory structure
+gulp.task('new', function() {
+  fse.mkdirsSync(imagesDir);
+  fse.outputFileSync(jsDirFile, 'This is the JS file');
+  fse.mkdirsSync(sassDir);
+  fse.outputFileSync(sassStyles, 'This is main Styles file');
+  fse.outputFileSync(sassGlobal, 'This is the Sass Global file');
+  fse.outputFileSync(indexFile, 'This is the Index file');
+});
+
+// -------------------------------
 // --- Global Tasks ---
 // -------------------------------
 

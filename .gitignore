@@ -2,11 +2,9 @@
 *.scssc
 .sass-cache
 #bower_components
-<<<<<<< HEAD
 **/node_modules
-=======
 node_modules
 build
 prod
+src_temp
 npm-debug.log
->>>>>>> develop
