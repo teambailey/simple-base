@@ -1,8 +1,5 @@
-
-/* Variables and Mixins */
-@import "partials/variables";
-@import "partials/mixins";
-
-/* General Styles */
+// --- General Styling --- 
 @import "partials/global";
 
+// --- Partials ---
+@import "partials/variables";
