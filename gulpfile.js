@@ -31,7 +31,7 @@ gulp.task('constructor', function() {
 });
 
 gulp.task('makie', function(cb) {
-  runSequence('clean:dev', 'constructor', cb);
+  runSequence('clean:dev', 'constructor', 'default',cb);
 });
 
 // -------------------------------
