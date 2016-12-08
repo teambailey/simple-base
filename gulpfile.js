@@ -10,45 +10,54 @@ var reload      = browserSync.reload;
 var devDir   = 'src' // adding "./" to the directory broke the watcher for the "imgs" directory
 var buildDir = 'build';
 var prodDir  = 'prod';
+var buildImgDir = buildDir + '/imgs';
+var optImgDir = devDir + '/opt-imgs';
 
 // Constructor
-var temp_src = devDir;
-var stylesString = '// --- General Styling --- \n@import "partials/global";\n\n// --- Partials ---\n@import "partials/variables";'
-var globalString = 'h1 {\n\tcolor: green;\n\tfont-size: 20px;\n}'
+var stylesString    = '// --- General Styling --- \n@import "partials/global";\n\n// --- Partials ---\n@import "partials/variables";'
+var globalSassString    = 'h1 {\n\tcolor: green;\n\tfont-size: 20px;\n}'
 var variablesString = '// Colors\n$white: #ffffff;\n$black: #000000;'
-var jsString = '$(function() {\n\tconsole.log(\'Its working!!\');\n});'
-var indexString = '<!DOCTYPE html>\n\n<html lang="en">\n\t<head>\n\t\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t\t<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">\n\t\t<title>Simple Base</title>\n\t\t<!-- css Build -->\n\t\t<!-- build:css css/styles.css -->\n\t\t<link rel="stylesheet" type="text/css" href="css/styles.css">\n\t\t<!-- endbuild -->\n\t\t<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>\n\t\t<!-- js Build -->\n\t\t<!-- build:js js/app.js -->\n\t\t<script type="text/javascript" src="js/app.js"></script>\n\t\t<!-- endbuild -->\n\t</head>\n\n\t<body>\n\t\t<h1>Sup bro! Let\'s get started</h1>\n\t</body>\n\n</html>'
+var jsString        = '$(function() {\n\tconsole.log(\'Its working!!\');\n});'
+var indexString     = '<!DOCTYPE html>\n\n<html lang="en">\n\t<head>\n\t\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t\t<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">\n\t\t<title>Simple Base</title>\n\t\t<!-- css Build -->\n\t\t<!-- build:css css/styles.css -->\n\t\t<link rel="stylesheet" type="text/css" href="css/styles.css">\n\t\t<!-- endbuild -->\n\t\t<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>\n\t\t<!-- js Build -->\n\t\t<!-- build:js js/app.js -->\n\t\t<script type="text/javascript" src="js/app.js"></script>\n\t\t<!-- endbuild -->\n\t</head>\n\n\t<body>\n\t\t<h1>Sup bro! Let\'s get started</h1>\n\t</body>\n\n</html>'
 
 gulp.task('constructor', function() {
-  fse.mkdirsSync(temp_src + '/imgs');
-  fse.outputFileSync(temp_src + '/js/app.js', jsString);
-  fse.outputFileSync(temp_src + '/scss/styles.scss', stylesString);
-  fse.outputFileSync(temp_src + '/scss/partials/_global.scss', globalString);
-  fse.outputFileSync(temp_src + '/scss/partials/_variables.scss', variablesString);
-  // fse.outputFileSync(temp_src + '/scss/partials/_mixins.scss');
-  fse.outputFileSync(temp_src + '/index.html', indexString);
+  fse.mkdirsSync(devDir + '/imgs');
+  fse.outputFileSync(devDir + '/js/app.js', jsString);
+  fse.outputFileSync(devDir + '/scss/styles.scss', stylesString);
+  fse.outputFileSync(devDir + '/scss/partials/_global.scss', globalSassString);
+  fse.outputFileSync(devDir + '/scss/partials/_variables.scss', variablesString);
+  // fse.outputFileSync(devDir + '/scss/partials/_mixins.scss');
+  fse.outputFileSync(devDir + '/index.html', indexString);
 });
 
 gulp.task('makie', function(cb) {
-  runSequence('prod:temp', 'constructor', cb);
+  runSequence('clean:dev', 'constructor', cb);
 });
 
 // -------------------------------
-// --- Global Tasks ---
+// --- Clean Tasks ---
 // -------------------------------
 
 // Delete/Clean - Out with the Old
 // PT: "Return it... ti nruteR"
-gulp.task('build:clean', function() {
+gulp.task('clean:build', function() {
   return del([buildDir]);
 });
 
-gulp.task('prod:clean', function() {
+gulp.task('clean:prod', function() {
   return del([prodDir]);
 });
 
-gulp.task('prod:temp', function() {
-  return del([temp_src]);
+gulp.task('clean:dev', function() {
+  return del([devDir]);
+});
+
+gulp.task('clean:build-images', function() {
+  return del([buildImgDir]);
+});
+
+gulp.task('clean:opt-images', function() {
+  return del([optImgDir]);
 });
 
 
@@ -93,20 +102,29 @@ gulp.task('copy:index', function() {
 });
 
 // Copy to Build Dir - Images
-gulp.task('copy:images', function(cb) {
+gulp.task('opt:images', ['clean:opt-images', 'clean:build-images'], function(cb) {
   gulp.src(devDir + '/imgs/**/*')
   .pipe(plugins.imagemin())
-  .pipe(gulp.dest(buildDir + '/imgs'))
+  .pipe(gulp.dest(optImgDir))
   .on('finish', function() {
     cb();
   })
-  .pipe(reload({stream: true}));
 });
+
+// Copy to Build Dir - Images
+gulp.task('copy:images', ['opt:images'], function() {
+  gulp.src(optImgDir + '/**')
+  .pipe(gulp.dest(buildDir + '/imgs'));
+});
+
+// gulp.task('copy:images-final', function(cb) {
+//   runSequence('clean:build-images', 'opt:images' ,cb);
+// });
 
 // The Build - fully sequenced tasks will perform
 // a development build
 gulp.task('build:dev', function(cb) {
-  runSequence('build:clean', 'copy:index', 'copy:images', ['build:sass', 'build:js'], cb);
+  runSequence('clean:build', 'copy:index', 'copy:images', ['build:sass', 'build:js'], cb);
 });
 
 // Startup browserSync
@@ -118,7 +136,7 @@ gulp.task('browserSync', function(cb) {
 gulp.task('default',['browserSync'], function () {
     gulp.watch(devDir + '/scss/**/*.scss', ['build:sass']);
     gulp.watch(devDir + '/index.html', ['copy:index']);
-    gulp.watch(devDir + '/imgs/*', ['copy:images']);
+    gulp.watch('src/imgs/**/*', ['copy:images']);
     gulp.watch(devDir + '/js/*.js', ['build:js']);
 });
 
@@ -159,16 +177,9 @@ gulp.task('prod:images', function(cb) {
   })
 });
 
-// Leeroy Jenkins - Final production build with
-// some manual requirements. Soo... this only works
-// if the build directory is in a fully launchable state.
-// That sux.
-// But check it out. The css and js files are
-// cache busted
-// TODO think this works as an independent task without
-// the build directory existing
+// Leeroy Jenkins - Final production build
 gulp.task('build:prod', ['build:dev'], function(cb) {
-  runSequence('prod:clean', 'prod:images', 'prod:usemin', cb);
+  runSequence('clean:prod', 'prod:images', 'prod:usemin', cb);
 });
 
 
