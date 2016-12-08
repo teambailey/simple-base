@@ -11,28 +11,33 @@ var devDir   = 'src' // adding "./" to the directory broke the watcher for the "
 var buildDir = 'build';
 var prodDir  = 'prod';
 
-// -------------------------------
-// --- Construct Tasks ---
-// -------------------------------
-var srcTemp = 'src_temp'; // tempDir for testing of construct task
-// Construct Paths
-var imagesDir    = srcTemp + '/imgs';
-var jsDirFile    = srcTemp + '/js/app.js';
-var sassDir      = srcTemp + '/scss';
-var sassStyles   = sassDir + '/styles.scss';
-var sassPartials = sassDir + '/partials';
-var sassGlobal   = sassPartials + '/_global.scss'
-var indexFile    = srcTemp + '/index.html';
+// Constructor
+// TODO fix this below
+// this would be the constructor.
+// its going to be used to build the
+// whole project. the styles.scss build
+// task has the format i need to use.
+// "\r" is the character code of a
+// carriage return. other that that, its
+// just the same code with no escapes needed... as of now
+var temp_src = 'src_temp';
+var stylesString = '// --- General Styling --- \n@import "partials/global";\n\n// --- Partials ---\n@import "partials/variables";\n@import "partials/mixins";'
+var variablesString = '// Colors\n$white: #ffffff;\n$black: #000000;'
+var jsString = '$(function() {\n\tconsole.log(\'Its working!!\');\n});'
+var indexString = '<!DOCTYPE html>\n\n<html lang="en">\n\t<head>\n\t\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t\t<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">\n\t\t<title>Simple Base</title>\n\t\t<!-- css Build -->\n\t\t<!-- build:css css/styles.css -->\n\t\t<link rel="stylesheet" type="text/css" href="css/styles.css">\n\t\t<!-- endbuild -->\n\t\t<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>\n\t\t<!-- js Build -->\n\t\t<!-- build:js js/app.js -->\n\t\t<script type="text/javascript" src="js/app.js"></script>\n\t\t<!-- endbuild -->\n\t</head>\n\n\t<body>\n\t\t<h1>Sup bro! Let\'s get started</h1>\n\t</body>\n\n</html>'
 
-// This set of construct methods
-// builds the basic directory structure
-gulp.task('new', function() {
-  fse.mkdirsSync(imagesDir);
-  fse.outputFileSync(jsDirFile, 'This is the JS file');
-  fse.mkdirsSync(sassDir);
-  fse.outputFileSync(sassStyles, 'This is main Styles file');
-  fse.outputFileSync(sassGlobal, 'This is the Sass Global file');
-  fse.outputFileSync(indexFile, 'This is the Index file');
+gulp.task('constructor', function() {
+  fse.mkdirsSync(temp_src + '/imgs');
+  fse.outputFileSync(temp_src + '/js/app.js', jsString);
+  fse.outputFileSync(temp_src + '/scss/styles.scss', stylesString);
+  fse.outputFileSync(temp_src + '/scss/partials/_global.scss');
+  fse.outputFileSync(temp_src + '/scss/partials/_variables.scss', variablesString);
+  fse.outputFileSync(temp_src + '/scss/partials/_mixins.scss');
+  fse.outputFileSync(temp_src + '/index.html', indexString);
+});
+
+gulp.task('makie', function(cb) {
+  runSequence('prod:temp', 'constructor', cb);
 });
 
 // -------------------------------
@@ -40,12 +45,17 @@ gulp.task('new', function() {
 // -------------------------------
 
 // Delete/Clean - Out with the Old
+// ProTip: "Return it... ti nruteR"
 gulp.task('build:clean', function() {
-  del([buildDir])
+  return del([buildDir]);
 });
 
 gulp.task('prod:clean', function() {
-  del([prodDir])
+  return del([prodDir]);
+});
+
+gulp.task('prod:temp', function() {
+  return del([temp_src]);
 });
 
 
@@ -129,16 +139,31 @@ gulp.task('default',['browserSync'], function () {
 // be busted. Also edits the index.html file
 // so that the newly added hashs match the
 // link tags. Sorcery
+// ----------
+// TODO fix this below
+// need the timeout so that the index.html
+// can be built completely
 gulp.task('prod:usemin', function(cb) {
-  gulp.src(buildDir + '/index.html')
-  .pipe(plugins.usemin({
-    css: [ plugins.rev() ],
-    js: [ plugins.rev() ]
-  }))
-  .pipe(gulp.dest(prodDir))
+  setTimeout(function() {
+    gulp.src(buildDir + '/index.html')
+    .pipe(plugins.usemin({
+      css: [ plugins.rev() ],
+      js: [ plugins.rev() ]
+    }))
+    .pipe(gulp.dest(prodDir))
+    .on('finish', function() {
+      cb();
+    });
+  }, 1000);
+});
+
+// Copy to Images Prod Dir - Images
+gulp.task('prod:images', function(cb) {
+  gulp.src(buildDir + '/imgs/**/*')
+  .pipe(gulp.dest(prodDir + '/imgs'))
   .on('finish', function() {
     cb();
-  });
+  })
 });
 
 // Leeroy Jenkins - Final production build with
@@ -147,8 +172,10 @@ gulp.task('prod:usemin', function(cb) {
 // That sux.
 // But check it out. The css and js files are
 // cache busted
-gulp.task('build:prod', ['prod:clean', 'prod:usemin'], function(cb) {
-  cb();
+// TODO think this works as an independent task without
+// the build directory existing
+gulp.task('build:prod', ['build:dev'], function(cb) {
+  runSequence('prod:clean', 'prod:images', 'prod:usemin', cb);
 });
 
 
@@ -163,7 +190,6 @@ gulp.task('build:prod', ['prod:clean', 'prod:usemin'], function(cb) {
 //   console.log(config.paths.myvar2);
 //   console.log(config.paths.myvar3);
 // });
-
 
 
 
