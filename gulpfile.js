@@ -1,5 +1,5 @@
 var gulp        = require('gulp');
-var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {someName} !== someName
+var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {some-name} !== someName
 var del         = require('del');
 var fse         = require('fs-extra');
 var runSequence = require('run-sequence');
@@ -159,14 +159,7 @@ gulp.task('prod:images', function(cb) {
   })
 });
 
-// Leeroy Jenkins - Final production build with
-// some manual requirements. Soo... this only works
-// if the build directory is in a fully launchable state.
-// That sux.
-// But check it out. The css and js files are
-// cache busted
-// TODO think this works as an independent task without
-// the build directory existing
+// Leeroy Jenkins - Final production build
 gulp.task('build:prod', ['build:dev'], function(cb) {
   runSequence('prod:clean', 'prod:images', 'prod:usemin', cb);
 });
