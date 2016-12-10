@@ -1,5 +1,5 @@
 var gulp        = require('gulp');
-var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {someName} !== someName
+var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {some-name} !== someName
 var del         = require('del');
 var fse         = require('fs-extra');
 var runSequence = require('run-sequence');
