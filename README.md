@@ -11,6 +11,12 @@
 -------
 
 
+##### After that:
+### gulp 
+
+-------
+
+
 ##### Once you have created something... great... I guess:
 ### gulp build:prod
 
