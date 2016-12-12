@@ -6,7 +6,7 @@
 
 ##### Then:
 ### gulp makie
-###### (run only once. its a reset. don't fuck with it)
+###### (run only once. its a reset. don't mess with it)
 
 -------
 
