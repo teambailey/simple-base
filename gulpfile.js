@@ -31,7 +31,7 @@ gulp.task('constructor', function() {
 });
 
 gulp.task('makie', function(cb) {
-  runSequence('clean:dev', 'constructor', 'default',cb);
+  runSequence('clean:dev', 'constructor', cb);
 });
 
 // -------------------------------
@@ -112,9 +112,10 @@ gulp.task('opt:images', ['clean:opt-images', 'clean:build-images'], function(cb)
 });
 
 // Copy to Build Dir - Images
-gulp.task('copy:images', ['opt:images'], function() {
-  gulp.src(optImgDir + '/**')
-  .pipe(gulp.dest(buildDir + '/imgs'));
+gulp.task('copy:images', function() {
+  gulp.src(devDir + '/imgs/**/*')
+  .pipe(gulp.dest(buildDir + '/imgs'))
+  .pipe(reload({stream: true}));
 });
 
 // gulp.task('copy:images-final', function(cb) {
@@ -136,7 +137,7 @@ gulp.task('browserSync', function(cb) {
 gulp.task('default',['browserSync'], function () {
     gulp.watch(devDir + '/scss/**/*.scss', ['build:sass']);
     gulp.watch(devDir + '/index.html', ['copy:index']);
-    gulp.watch('src/imgs/**/*', ['copy:images']);
+    gulp.watch(['src/imgs', 'src/imgs/**/*'], ['copy:images']);
     gulp.watch(devDir + '/js/*.js', ['build:js']);
 });
 
@@ -169,7 +170,7 @@ gulp.task('prod:usemin', function(cb) {
 });
 
 // Copy to Images Prod Dir - Images
-gulp.task('prod:images', function(cb) {
+gulp.task('prod:images', ['opt:images'], function(cb) {
   gulp.src(buildDir + '/imgs/**/*')
   .pipe(gulp.dest(prodDir + '/imgs'))
   .on('finish', function() {
