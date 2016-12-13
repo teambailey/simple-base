@@ -112,15 +112,11 @@ gulp.task('opt:images', ['clean:opt-images', 'clean:build-images'], function(cb)
 });
 
 // Copy to Build Dir - Images
-gulp.task('copy:images', function() {
-  gulp.src(devDir + '/imgs/**/*')
+gulp.task('copy:images', ['clean:build-images'], function() {
+  gulp.src(devDir + '/imgs/*')
   .pipe(gulp.dest(buildDir + '/imgs'))
   .pipe(reload({stream: true}));
 });
-
-// gulp.task('copy:images-final', function(cb) {
-//   runSequence('clean:build-images', 'opt:images' ,cb);
-// });
 
 // The Build - fully sequenced tasks will perform
 // a development build
