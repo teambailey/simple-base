@@ -1,5 +1,5 @@
 var gulp        = require('gulp');
-var plugins     = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {some-name} !== someName
+var $           = require('gulp-load-plugins')(); // 1. gulp-{some-name} === someName; 2. {some-name} !== someName
 var del         = require('del');
 var fse         = require('fs-extra');
 var runSequence = require('run-sequence');
@@ -77,11 +77,11 @@ gulp.task('serve', function() {
 // CSS Build - Compile sass, prefix, minify, create source.map, browserSync
 gulp.task('build:sass', function () {
     gulp.src(devDir + '/scss/styles.scss')
-    .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(plugins.autoprefixer('last 3 versions'))
-    .pipe(plugins.cleanCss())
-    .pipe(plugins.sourcemaps.write('.'))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.autoprefixer('last 3 versions'))
+    .pipe($.cleanCss())
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(buildDir + '/css'))
     .pipe(reload({stream: true}));
 });
@@ -89,7 +89,7 @@ gulp.task('build:sass', function () {
 // JS Build - Uglify, browserSync
 gulp.task('build:js', function () {
   gulp.src(devDir + '/js/app.js')
-  .pipe(plugins.uglify())
+  .pipe($.uglify())
   .pipe(gulp.dest(buildDir + '/js'))
   .pipe(reload({stream: true}));
 });
@@ -104,7 +104,7 @@ gulp.task('copy:index', function() {
 // Copy to Build Dir - Images
 gulp.task('opt:images', ['clean:opt-images', 'clean:build-images'], function(cb) {
   gulp.src(devDir + '/imgs/**/*')
-  .pipe(plugins.imagemin())
+  .pipe($.imagemin())
   .pipe(gulp.dest(optImgDir))
   .on('finish', function() {
     cb();
@@ -154,9 +154,9 @@ gulp.task('default',['browserSync'], function () {
 gulp.task('prod:usemin', function(cb) {
   setTimeout(function() {
     gulp.src(buildDir + '/index.html')
-    .pipe(plugins.usemin({
-      css: [ plugins.rev() ],
-      js: [ plugins.rev() ]
+    .pipe($.usemin({
+      css: [ $.rev() ],
+      js: [ $.rev() ]
     }))
     .pipe(gulp.dest(prodDir))
     .on('finish', function() {
