@@ -7,18 +7,18 @@ var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
 // The Dir's
-var devDir   = 'src' // adding "./" to the directory broke the watcher for the "imgs" directory
-var buildDir = 'build';
-var prodDir  = 'prod';
+var devDir      = 'src' // adding "./" to the directory broke the watcher for the "imgs" directory
+var buildDir    = 'build';
+var prodDir     = 'prod';
 var buildImgDir = buildDir + '/imgs';
-var optImgDir = devDir + '/opt-imgs';
+var optImgDir   = devDir + '/opt-imgs';
 
 // Constructor
-var stylesString    = '// --- General Styling --- \n@import "partials/global";\n\n// --- Partials ---\n@import "partials/variables";'
-var globalSassString    = 'h1 {\n\tcolor: green;\n\tfont-size: 20px;\n}'
-var variablesString = '// Colors\n$white: #ffffff;\n$black: #000000;'
-var jsString        = '$(function() {\n\tconsole.log(\'Its working!!\');\n});'
-var indexString     = '<!DOCTYPE html>\n\n<html lang="en">\n\t<head>\n\t\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t\t<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">\n\t\t<title>Simple Base</title>\n\t\t<!-- css Build -->\n\t\t<!-- build:css css/styles.css -->\n\t\t<link rel="stylesheet" type="text/css" href="css/styles.css">\n\t\t<!-- endbuild -->\n\t\t<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>\n\t\t<!-- js Build -->\n\t\t<!-- build:js js/app.js -->\n\t\t<script type="text/javascript" src="js/app.js"></script>\n\t\t<!-- endbuild -->\n\t</head>\n\n\t<body>\n\t\t<h1>Sup bro! Let\'s get started</h1>\n\t</body>\n\n</html>'
+var stylesString      = '// --- General Styling --- \n@import "partials/global";\n\n// --- Partials ---\n@import "partials/variables";'
+var globalSassString  = 'h1 {\n\tcolor: green;\n\tfont-size: 20px;\n}'
+var variablesString   = '// Colors\n$white: #ffffff;\n$black: #000000;'
+var jsString          = '$(function() {\n\tconsole.log(\'Its working!!\');\n});'
+var indexString       = '<!DOCTYPE html>\n\n<html lang="en">\n\t<head>\n\t\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t\t<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">\n\t\t<title>Simple Base</title>\n\t\t<!-- css Build -->\n\t\t<!-- build:css css/styles.css -->\n\t\t<link rel="stylesheet" type="text/css" href="css/styles.css">\n\t\t<!-- endbuild -->\n\t\t<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>\n\t\t<!-- js Build -->\n\t\t<!-- build:js js/app.js -->\n\t\t<script type="text/javascript" src="js/app.js"></script>\n\t\t<!-- endbuild -->\n\t</head>\n\n\t<body>\n\t\t<h1>Sup bro! Let\'s get started</h1>\n\t</body>\n\n</html>'
 
 gulp.task('constructor', function() {
   fse.mkdirsSync(devDir + '/imgs');
@@ -89,7 +89,6 @@ gulp.task('build:sass', function () {
 // JS Build - Uglify, browserSync
 gulp.task('build:js', function () {
   gulp.src(devDir + '/js/app.js')
-  .pipe($.uglify())
   .pipe(gulp.dest(buildDir + '/js'))
   .pipe(reload({stream: true}));
 });
@@ -156,7 +155,7 @@ gulp.task('prod:usemin', function(cb) {
     gulp.src(buildDir + '/index.html')
     .pipe($.usemin({
       css: [ $.rev() ],
-      js: [ $.rev() ]
+      js: [ $.uglify(), $.rev() ]
     }))
     .pipe(gulp.dest(prodDir))
     .on('finish', function() {
