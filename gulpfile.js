@@ -89,7 +89,7 @@ gulp.task('build:sass', function () {
 // JS Build - Uglify, browserSync
 gulp.task('build:js', function () {
   gulp.src(devDir + '/js/**/*.js')
-  .pipe($.concat('all.js'))
+  .pipe($.concat('app.js'))
   .pipe(gulp.dest(buildDir + '/js'))
   .pipe(reload({stream: true}));
 });
