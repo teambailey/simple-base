@@ -6,23 +6,42 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "babel": {
+    "babelrc": false,
+    "presets": [
+      "env"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.2",
     "del": "^2.2.2",
     "fs-extra": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^3.1.1",
-    "gulp-load-plugins": "^1.4.0",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-rev": "^7.1.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
     "gulp-usemin": "^0.3.26",
     "run-sequence": "^1.2.2"
+  },
+  "standard": {
+    "ignore": [
+      "build/",
+      "prod/"
+    ],
+    "globals": [
+      "$",
+      "jQuery"
+    ]
   }
 }
