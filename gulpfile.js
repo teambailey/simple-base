@@ -34,6 +34,22 @@ gulp.task('makie', (cb) => {
   runSequence('clean:dev', 'constructor', cb)
 })
 
+// Error reporter
+function onBabelError (err) {
+  // For gulp-util users u can use a more colorfull variation
+  // util.log(util.colors.red('[Compilation Error]'));
+  // util.log(err.fileName + ( err.loc ? `( ${err.loc.line}, ${err.loc.column} ): ` : ': '));
+  // util.log(util.colors.red('error Babel: ' + err.message + '\n'));
+  // util.log(err.codeFrame);
+
+  console.log('[Compilation Error]')
+  console.log(err.fileName + (err.loc ? `( ${err.loc.line}, ${err.loc.column} ): ` : ': '))
+  console.log('error Babel: ' + err.message + '\n')
+  console.log(err.codeFrame)
+
+  this.emit('end')
+}
+
 // -------------------------------
 // --- Clean Tasks ---
 // -------------------------------
@@ -89,7 +105,7 @@ gulp.task('build:sass', () => {
 gulp.task('build:js', () => {
   gulp.src(devDir + '/js/**/*.js')
     .pipe($.sourcemaps.init())
-    .pipe($.babel())
+    .pipe($.babel().on('error', onBabelError))
     .pipe($.concat('app.js'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(buildDir + '/js'))
