@@ -1,5 +1,5 @@
 # Simple Base 
-## Fast setup for a simple framework used for quick build outs than can be production ready if required
+### Fast setup for a simple framework used for quick build outs than can be production ready if required
 
 #### - Get dependencies: 
 ### npm install
