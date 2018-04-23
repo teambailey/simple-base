@@ -4,18 +4,16 @@
 
 ## npm install
 
-### Constructor task (run only once, its a reset)
+Constructor task (run only once, its a reset)
 ## gulp makie
 
 ## gulp 
 
-### Runs a production build
+Runs a production build
 ## gulp build:prod
 
-#### If you are returning after "makie", just use:
+If you are returning after "makie", just use:
 ## gulp
-
--------
 
 Zsh function for auto-build 
 ###### command line use: generateSimpleBase ${ newDirectoryName }
