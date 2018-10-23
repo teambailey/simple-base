@@ -124,7 +124,7 @@ gulp.task('opt:images', ['clean:opt-images', 'clean:build-images'], (cb) => {
   gulp.src(devDir + '/imgs/**/*')
     .pipe($.imagemin())
     .pipe(gulp.dest(optImgDir))
-    .on('finish', () => {
+    .on('end', () => {
       cb()
     })
 })
@@ -176,7 +176,7 @@ gulp.task('prod:usemin', (cb) => {
         js: [ $.uglify(), $.rev() ]
       }))
       .pipe(gulp.dest(prodDir))
-      .on('finish', () => {
+      .on('end', () => {
         cb()
       })
   }, 1000)
