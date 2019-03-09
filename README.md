@@ -1,29 +1,28 @@
-##### First:
-### npm install
+# Simple Base 
+### Fast setup for a simple framework used for quick build outs than can be production ready if required
 
+#### Get dependencies
+```
+npm install
+```
+#### Then run constructor
+```
+gulp makie
+```
+#### During development run
+```
+gulp
+```
+#### For a production ready build
+```
+gulp build:prod
+```
 -------
-
-
-##### Then:
-### gulp makie
-###### (run only once. its a reset. don't mess with it)
-
--------
-
-
-##### After that:
-### gulp 
-
--------
-
-
-##### Once you have created something... great... I guess:
-### gulp build:prod
-
--------
-
-
-##### If you are returning after "makie", just use:
-### Gulp
-
--------
+#### Zsh function for auto-build
+```
+generateSimpleBase(){git clone https://github.com/teambailey/simple-base.git $1 && cd $1/ && npm i && gulp makie && gulp}
+```
+#### Auto-build command line use
+```
+generateSimpleBase ${ newDirectoryName }
+```

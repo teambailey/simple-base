@@ -1,8 +1,3 @@
-# EditorConfig is awesome: http://EditorConfig.org
-
-# Howto with your editor:
-#   Sublime: https://github.com/sindresorhus/editorconfig-sublime
-
 # top-most EditorConfig file
 root = true
 
@@ -23,18 +18,15 @@ space_after_control_statements = true
 space_after_anonymous_functions = false
 spaces_in_brackets = false
 
-# No Standard.  Please document a standard if different from .js
-[**.yml, **.html, **.css, **.less]
+# No Standard.
+[**.yml, **.html, **.css, **.sass]
 trim_trailing_whitespace = true
 indent_size = 2
 
-# No standard.  Please document a standard if different from .js
+# No standard.
 [**.md]
 indent_style = tab
 
-# Standard at:
+# No standard
 [Makefile]
 indent_style = tab
-
-[**.less]
-indent_size = 2
