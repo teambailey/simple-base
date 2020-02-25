@@ -6,6 +6,4 @@
 node_modules
 build
 prod
-# Remove "src" if cloned
-src
 npm-debug.log
